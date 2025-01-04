@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _newPages = [
     const CreateGroupWidget(),
     const FeedBack(),
-    const GroupPage(),
+    GroupPage(),
   ];
 
   void _navigateToPage(int index) {
