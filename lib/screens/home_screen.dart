@@ -5,8 +5,6 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:kitti/screens/create_group.dart';
 
-import '../util/colors.dart';
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -199,12 +197,33 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class RecommandedWidget extends StatelessWidget {
-  const RecommandedWidget({super.key});
+  List<Map<String, dynamic>> recommandedList = [
+    {
+      "title": "প্রেম হবে Vs বিয়ে হবে",
+      "status": "গানে গানে আড্ডা",
+      "img": "assets/user11.png",
+    },
+    {
+      "title": "প্বিন্দাস লাইফ",
+      "status": "গানে গানে আড্ডা",
+      "img": "assets/user2.png",
+    },
+    {
+      "title": "ƊЄƑƛƲԼƬЄƦ ƓƖƦԼ",
+      "status": "গানে গানে আড্ডা",
+      "img": "assets/user3.png",
+    },
+    {
+      "title": "🌸আমি একান্তই আমার🌸",
+      "status": "গানে গানে আড্ডা",
+      "img": "assets/user3.png",
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 8,
+      itemCount: recommandedList.length,
       itemBuilder: (context, index) {
         return Card(
           child: Container(
@@ -223,14 +242,15 @@ class RecommandedWidget extends StatelessWidget {
                             Container(
                               width: 40.w,
                               height: 40.h,
-                              child: Image.asset("assets/user.png"),
+                              child: Image.asset(
+                                  "${recommandedList[index]['img']}"),
                             ),
                             SizedBox(
                               width: 5.w,
                             ),
                             Container(
                               child: Text(
-                                "প্রেম হবে Vs বিয়ে হবে",
+                                "${recommandedList[index]['status']}",
                                 style: TextStyle(
                                     fontSize: 12.sp, color: Colors.black),
                               ),
@@ -262,14 +282,20 @@ class RecommandedWidget extends StatelessWidget {
                               scrollDirection: Axis.horizontal,
                               itemCount: 4,
                               itemBuilder: (context, index) {
-                                return SizedBox(
-                                    width: 40.w,
-                                    height: 40.h,
-                                    child: Container(
-                                        margin: EdgeInsets.symmetric(
-                                            horizontal: 5.w),
-                                        child: Image.asset(
-                                            "assets/icons/profile.png")));
+                                return Stack(
+                                  children: [
+                                    SizedBox(
+                                        width: 40.w,
+                                        height: 40.h,
+                                        child: Container(
+                                            margin: EdgeInsets.symmetric(
+                                                horizontal: 5.w),
+                                            child: Image.asset(
+                                                "assets/user1.png"))),
+                                    Positioned(
+                                        child: Image.asset("assets/group.png"))
+                                  ],
+                                );
                               }),
                         ),
                       ],
@@ -287,7 +313,12 @@ class RecommandedWidget extends StatelessWidget {
                                 width: 81.w,
                                 height: 75.h,
                                 margin: EdgeInsets.symmetric(horizontal: 5.w),
-                                child: Image.asset("assets/user.jpg")),
+                                child: Image.asset(
+                                  "${recommandedList[index]['img']}",
+                                  width: 80.w,
+                                  height: 75.h,
+                                  fit: BoxFit.fill,
+                                )),
                             Positioned(
                                 bottom: -5.h,
                                 left: 15.w,
@@ -381,12 +412,42 @@ class CountryWidget extends StatelessWidget {
     {"name": "Thailand", "img": "assets/tha.png"}
   ];
   List<Map<String, dynamic>> gridItems = [
-    {"name": "কয়েন রিচার্জ রুম", "des": "Wellcome my all friends", "img": "assets/pic1.png"},
-    {"name": "✿ƊЄƑƛƲƬЄƦƓ ...", "des": "Wellcome my all friends", "img": "assets/pic2.png"},
-    {"name": "SL- Sweet Love a...", "des": "আসো সবাই আদা দেই", "img": "assets/pic3.png"},
-    {"name": "বি-বাড়িয়া আড্ডা ম...", "des": "Wellcome! Please abide...", "img": "assets/pic4.png"},
-    {"name": "কয়েন রিচার্জ রুম", "des": "Wellcome my all friends", "img": "assets/pic1.png"},
-    {"name": "কয়েন রিচার্জ রুম", "des": "Wellcome my all friends", "img": "assets/pic2.png"}
+    {
+      "name": "কয়েন রিচার্জ রুম",
+      "des": "Wellcome my all friends",
+      "img": "assets/pic1.png",
+      "id": 1234
+    },
+    {
+      "name": "✿ƊЄƑƛƲƬЄƦƓ ...",
+      "des": "Wellcome my all friends",
+      "img": "assets/pic2.png",
+      "id": 1234
+    },
+    {
+      "name": "SL- Sweet Love a...",
+      "des": "আসো সবাই আদা দেই",
+      "img": "assets/pic3.png",
+      "id": 1234
+    },
+    {
+      "name": "বি-বাড়িয়া আড্ডা ম...",
+      "des": "Wellcome! Please abide...",
+      "img": "assets/pic4.png",
+      "id": 1234
+    },
+    {
+      "name": "কয়েন রিচার্জ রুম",
+      "des": "Wellcome my all friends",
+      "img": "assets/pic1.png",
+      "id": 1234
+    },
+    {
+      "name": "কয়েন রিচার্জ রুম",
+      "des": "Wellcome my all friends",
+      "img": "assets/pic2.png",
+      "id": 1234
+    }
   ];
   @override
   Widget build(BuildContext context) {
@@ -418,7 +479,7 @@ class CountryWidget extends StatelessWidget {
           ],
         ),
         Container(
-          height: 100.h,
+          height: 80.h,
           width: double.infinity,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
@@ -450,107 +511,152 @@ class CountryWidget extends StatelessWidget {
           ),
         ),
         Expanded(
-          child: GridView.builder(
+          child: Container(
+            color: const Color(0xff1a1636),
+            child: GridView.builder(
+              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 5.w,
-                  crossAxisSpacing: 5.h),
+                crossAxisCount: 2,
+                mainAxisSpacing: 10.h,
+                crossAxisSpacing: 10.w,
+                childAspectRatio: 0.95, // Adjusted aspect ratio for better height
+              ),
               itemCount: gridItems.length,
               itemBuilder: (context, index) {
-                return Column(
-                  children: [
-                    Stack(
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                              color: Colors.blue,
-                              border:
-                                  Border.all(width: 0.5, color: Colors.blue)),
-                          child: Image.asset("${gridItems[index]['img']}"),
-                        ),
-                        Positioned(
-                            left: 5.w,
-                            child: Container(
-                                //  width: 70.w,
-                                height: 30.h,
-                                margin: EdgeInsets.only(top: 10.h),
+                return Container(
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF2B2E4A), // Card background color
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: Stack(
+                          children: [
+                            // Main Image
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: Image.asset(
+                                "${gridItems[index]['img']}",
+                                fit: BoxFit.cover,
+                                width: double.infinity,
+                                height: double.infinity,
+                              ),
+                            ),
+                            // Bottom-Right ID within the image
+                            Positioned(
+                              bottom: 8.h,
+                              right: 8.w,
+                              child: Container(
                                 padding: EdgeInsets.symmetric(
-                                    horizontal: 5.w, vertical: 5.h),
+                                    horizontal: 8.w, vertical: 2.h),
                                 decoration: BoxDecoration(
+                                  color: Colors.white.withValues(alpha: 0.4),
+                                  borderRadius: BorderRadius.circular(12)
+                                ),
+                                child: Text(
+                                  "ID: ${gridItems[index]['id']}",
+                                  style: TextStyle(
+                                    fontSize: 10.sp,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            // Top-Left Badge
+                            Positioned(
+                              top: 0,
+                              left: 0,
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 8.w, vertical: 4.h),
+                                decoration: BoxDecoration(
+                                  color: Colors.orange,
                                   borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(10.0),
-                                      bottomRight: Radius.circular(10.0)),
-                                  gradient: LinearGradient(
-                                    begin: Alignment.topRight,
-                                    end: Alignment.bottomLeft,
-                                    colors: [
-                                      Color(0xff5476D8),
-                                      Color(0xff2D40B9),
-                                    ],
+                                    topLeft: Radius.circular(10),
+                                    bottomRight: Radius.circular(10),
                                   ),
                                 ),
                                 child: Row(
                                   children: [
-                                    Image.asset("assets/icons/vip.png"),
-                                    SizedBox(
-                                      width: 4.w,
+                                    Image.asset(
+                                      "assets/icons/vip.png",
+                                      width: 12.w,
+                                      height: 12.h,
                                     ),
+                                    SizedBox(width: 4.w),
                                     Text(
-                                      "SVIP2",
+                                      "SVIP${index + 1}",
                                       style: TextStyle(
-                                          fontSize: 11.sp,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.white),
+                                        fontSize: 10.sp,
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.white,
+                                      ),
                                     ),
                                   ],
-                                ))),
-                        Positioned(
-                            bottom: 10.h,
-                            right: 10.w,
-                            child: Container(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 8.w, vertical: 5.h),
-                              decoration: BoxDecoration(
-                                  color: Color(0xff739BC2),
-                                  border: Border.all(width: 0.5)),
-                              child: Text(
-                                "11",
-                                style: TextStyle(
-                                    fontSize: 11.sp,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white),
+                                ),
                               ),
-                            )),
-                        Positioned(
-                            bottom: 10.h,
-                            right: 10.w,
-                            child: Container(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 8.w, vertical: 5.h),
-                              decoration: BoxDecoration(
-                                  color: Color(0xff739BC2),
-                                  border: Border.all(width: 0.5)),
-                              child: Text(
-                                "ID: 1234",
-                                style: TextStyle(
-                                    fontSize: 11.sp,
+                            ),
+                            // Top-Right Text with Blur and Rounded Background
+                            Positioned(
+                              top: 8.h,
+                              right: 8.w,
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 8.w, vertical: 2.h),
+                                decoration: BoxDecoration(
+                                  color: Colors.white.withValues(alpha: 0.3),
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child: Text(
+                                  "11",
+                                  style: TextStyle(
+                                    fontSize: 10.sp,
+                                    color: Colors.white,
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.white),
+                                  ),
+                                ),
                               ),
-                            ))
-                      ],
-                    ),
-                    Text(
-                      "${gridItems[index]['img']}",
-                      style: TextStyle(
-                          fontSize: 11.sp,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
-
-                  ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 6.h),
+                      // Title Text
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 8.w),
+                        child: Text(
+                          "${gridItems[index]['name']}",
+                          style: TextStyle(
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white,
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                      SizedBox(height: 4.h),
+                      // Subtitle Text
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 8.w),
+                        child: Text(
+                          "Wellcome my all friends",
+                          style: TextStyle(
+                            fontSize: 12.sp,
+                            color: Colors.grey[300],
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 8.h),
+                    ],
+                  ),
                 );
-              }),
+              },
+            ),
+          ),
         ),
       ],
     );

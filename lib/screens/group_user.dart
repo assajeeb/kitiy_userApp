@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:kitti/screens/public_group.dart';
 import 'package:kitti/util/colors.dart';
-import 'package:kitti/widgets/custom_button_one.dart';
+
 
 import 'create_group.dart';
 import 'group_call_screen.dart';
@@ -316,12 +316,12 @@ class _GroupUserState extends State<GroupUser> {
   List<Widget> groupList = [PublicGroup(), PrivateGroup()];
 }
 
-class CustomButton extends StatelessWidget {
+class CustomButtonWidget extends StatelessWidget {
   final title;
   final width;
   final img;
   VoidCallback onTab;
-  CustomButton({
+  CustomButtonWidget({
     this.title,
     this.width,
     this.img,
