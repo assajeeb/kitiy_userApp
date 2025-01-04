@@ -17,12 +17,13 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
 
-  int _currentPageIndex = 0;
+  int _currentPageIndex = 1;
 
   final List<Widget> _newPages = [
-    const CreateGroupWidget(),
     const FeedBack(),
-    GroupPage(),
+    const CreateGroupWidget(),//home
+
+    GroupPage()
   ];
 
   void _navigateToPage(int index) {
@@ -36,7 +37,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
-        leading: Container(
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
           child: Image.asset("assets/icons/profile.png"),
         ),
         centerTitle: false,
