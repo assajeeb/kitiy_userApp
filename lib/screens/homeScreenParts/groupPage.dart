@@ -60,6 +60,7 @@ class _GroupPageState extends State<GroupPage> {
 
   @override
   Widget build(BuildContext context) {
+    gridItems.shuffle();
     return Column(
       children: [
         Container(
@@ -107,7 +108,7 @@ class _GroupPageState extends State<GroupPage> {
                           vertical: 1.h,
                         ),
                         decoration: BoxDecoration(
-                          color: Colors.black.withOpacity(0.5),
+                          color: Colors.black.withValues(alpha: 0.5),
                           borderRadius: BorderRadius.circular(5.r),
                         ),
                         child: Text(
@@ -190,7 +191,6 @@ class _GroupPageState extends State<GroupPage> {
         // Expanded widget to display selected content
         Expanded(
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.h),
             decoration: BoxDecoration(
               color: const Color(0xFF1A1636),
             ),

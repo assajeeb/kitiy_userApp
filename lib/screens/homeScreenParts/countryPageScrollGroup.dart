@@ -4,7 +4,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class CountryPageScrollGroup extends StatelessWidget {
   CountryPageScrollGroup({super.key});
 
-  List<Map<String, dynamic>> gridItems = [
+  final List<Map<String, dynamic>> gridItems = [
+    {
+      "name": "SL- Sweet Love a...",
+      "des": "আসো সবাই আদা দেই",
+      "img": "assets/pic3.png",
+      "id": 1234
+    },
     {
       "name": "কয়েন রিচার্জ রুম",
       "des": "Wellcome my all friends",
@@ -36,14 +42,28 @@ class CountryPageScrollGroup extends StatelessWidget {
       "id": 1234
     },
     {
+      "name": "SL- Sweet Love a...",
+      "des": "আসো সবাই আদা দেই",
+      "img": "assets/pic3.png",
+      "id": 1234
+    },
+    {
+      "name": "বি-বাড়িয়া আড্ডা ম...",
+      "des": "Wellcome! Please abide...",
+      "img": "assets/pic4.png",
+      "id": 1234
+    },
+    {
       "name": "কয়েন রিচার্জ রুম",
       "des": "Wellcome my all friends",
       "img": "assets/pic2.png",
       "id": 1234
     }
   ];
+
   @override
   Widget build(BuildContext context) {
+    gridItems.shuffle();
     return GridView.builder(
       padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

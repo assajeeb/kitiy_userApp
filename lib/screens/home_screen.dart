@@ -7,6 +7,7 @@ import 'package:kitti/screens/create_group.dart';
 import 'package:kitti/screens/homeScreenParts/feedBack.dart';
 import 'package:kitti/screens/homeScreenParts/groupPage.dart';
 import 'package:kitti/screens/homeScreenParts/home.dart';
+import 'package:kitti/screens/mainFeedBack/mainFeedBackPage.dart';
 import 'package:kitti/util/colors.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -109,6 +110,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 // Popup menu item 2
                 PopupMenuItem(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const FeedBackPage()),
+                    );
+                  },
                   value: 2,
                   child: Row(
                     children: [

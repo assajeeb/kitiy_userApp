@@ -5,6 +5,20 @@ class FeedBack extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Column(
+      children: [
+        Expanded(
+          child: Center(
+            child:
+            Text(
+              "Waiting for FIGMA design",
+              style: TextStyle(
+                color: Colors.black
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
   }
 }

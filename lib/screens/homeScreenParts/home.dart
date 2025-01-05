@@ -143,6 +143,7 @@ class RecommandedWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    recommandedList.shuffle();
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 1,
@@ -173,7 +174,7 @@ class RecommandedWidget extends StatelessWidget {
               children: [
                 // Left Side
                 SizedBox(
-                  width: 203.w,
+                  width: 233.w,
                   child: Column(
                     children: [
                       Row(
@@ -239,14 +240,14 @@ class RecommandedWidget extends StatelessWidget {
                 ),
                 // Right side
                 SizedBox(
-                  width: 83.w,
+                  width: 110.w,
                   child: Column(
                     children: [
                       Stack(
                         clipBehavior: Clip.none,
                         children: [
                           Container(
-                              width: 81.w,
+                              width: 100.w,
                               height: 75.h,
                               margin: EdgeInsets.symmetric(horizontal: 5.w),
                               child: Image.asset(
