@@ -7,6 +7,7 @@ import 'package:kitti/screens/create_group.dart';
 import 'package:kitti/screens/homeScreenParts/feedBack.dart';
 import 'package:kitti/screens/homeScreenParts/groupPage.dart';
 import 'package:kitti/screens/homeScreenParts/home.dart';
+import 'package:kitti/util/colors.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -34,9 +35,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+
     return SafeArea(
         child: Scaffold(
+          backgroundColor: AppColors.whiteColor,
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Image.asset("assets/icons/profile.png"),
@@ -54,6 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           GestureDetector(
+
             onTap: () => _navigateToPage(1), // Navigate to "Feedback"
             child: Container(
               width: 40.w,

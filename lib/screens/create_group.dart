@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:kitti/screens/group_user.dart';
+import 'package:kitti/screens/group_user_screen.dart';
 import 'package:kitti/screens/public_group.dart';
 import 'package:kitti/util/colors.dart';
 import 'package:kitti/widgets/custom_button_one.dart';
