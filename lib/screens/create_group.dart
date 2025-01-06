@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:kitti/screens/groupUserScreenParts/create_group_finish.dart';
 import 'package:kitti/screens/group_user_screen.dart';
 import 'package:kitti/screens/public_group.dart';
 import 'package:kitti/util/colors.dart';
@@ -92,7 +93,7 @@ class _CreateGroupState extends State<CreateGroup> {
         color: AppColors.btnColor,
         width: 150.w,
         onTab: (){
-Get.to(GroupUser());
+Get.to(CreateGroupFinish());
         },
       ),
     );

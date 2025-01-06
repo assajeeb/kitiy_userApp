@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:kitti/screens/create_group.dart';
-import 'package:kitti/screens/homeScreenParts/feedBack.dart';
+import 'package:kitti/screens/homeScreenParts/feed_back.dart';
 import 'package:kitti/screens/homeScreenParts/groupPage.dart';
 import 'package:kitti/screens/homeScreenParts/home.dart';
 import 'package:kitti/screens/mainFeedBack/mainFeedBackPage.dart';

@@ -1,3 +1,4 @@
+import 'package:country_flags/country_flags.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kitti/screens/homeScreenParts/countryPageScrollGroup.dart';
@@ -340,12 +341,17 @@ class PopularWidget extends StatelessWidget {
 
 class CountryWidget extends StatelessWidget {
   List<Map<String, dynamic>> countryList = [
-    {"name": "Bangladesh", "img": "assets/bn.png"},
-    {"name": "India", "img": "assets/in.png"},
-    {"name": "Indonesia", "img": "assets/ind.png"},
-    {"name": "Pakistan", "img": "assets/pak.png"},
-    {"name": "America", "img": "assets/en.png"},
-    {"name": "Thailand", "img": "assets/tha.png"}
+    { "name": "Bangladesh", "country_code": "BD" },
+    { "name": "India", "country_code": "IN" },
+    { "name": "Indonesia", "country_code": "ID" },
+    { "name": "Pakistan", "country_code": "PK" },
+    { "name": "America", "country_code": "US" }, // Assuming "America" refers to the United States
+    { "name": "Thailand", "country_code": "TH" },
+    { "name": "China", "country_code": "CN" },
+    { "name": "Japan", "country_code": "JP" },
+    { "name": "Brazil", "country_code": "BR" },
+    { "name": "Russia", "country_code": "RU" },
+    { "name": "Canada", "country_code": "CA" }
   ];
 
   @override
@@ -378,7 +384,8 @@ class CountryWidget extends StatelessWidget {
           ],
         ),
         Container(
-          height: 80.h,
+          padding: EdgeInsets.only(top: 10.0),
+          height: 70.h,
           width: double.infinity,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
@@ -387,22 +394,28 @@ class CountryWidget extends StatelessWidget {
               return Column(
                 children: [
                   Container(
-                    height: 60.h,
-                    width: 55.w,
-                    margin: EdgeInsets.symmetric(horizontal: 5.w),
-                    child: Image.asset(
-                      "${countryList[index]['img']}",
-                      width: 55.w,
-                      height: 60.h,
-                      fit: BoxFit.fitWidth,
+                    decoration: BoxDecoration(
+                      boxShadow: [BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.2),
+                        offset: Offset(0.0, 0.0),
+                        blurRadius: 10.0,
+
+                      )]
                     ),
+                    height: 35.h,
+                    width: 65.w,
+                    margin: EdgeInsets.symmetric(horizontal: 5.w),
+                    child: CountryFlag.fromCountryCode(countryList[index]["country_code"], shape: RoundedRectangle(4.0),height: 40.0, width: 60.0,)
                   ),
-                  Text(
-                    "${countryList[index]['name']}",
-                    style: TextStyle(
-                        fontSize: 10.sp,
-                        color: Colors.black,
-                        fontWeight: FontWeight.w500),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0),
+                    child: Text(
+                      "${countryList[index]['name']}",
+                      style: TextStyle(
+                          fontSize: 11.sp,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500),
+                    ),
                   )
                 ],
               );
