@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 import 'package:kitti/screens/home_screen.dart';
+import 'package:kitti/screens/waiting_list_screen.dart';
 
 void main() {
   runApp(MyApp());

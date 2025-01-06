@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+//import 'package:image_picker/image_picker.dart';
 import 'package:kitti/util/colors.dart';
 
 class CreateGroupFinish extends StatefulWidget {
@@ -11,6 +14,26 @@ class CreateGroupFinish extends StatefulWidget {
 }
 
 class _CreateGroupFinishState extends State<CreateGroupFinish> {
+ // final ImagePicker _picker = ImagePicker();
+  var image;
+
+ // XFile? file;
+
+  int showComment = 0;
+
+  uploadProfilePic() async {
+    // final XFile tempImage =
+    // (await _picker.pickImage(source: ImageSource.gallery))!;
+    //
+    // setState(() {
+    //   image = tempImage.path;
+    //
+    //   file = tempImage;
+    //   print(tempImage.name);
+    //   print(image);
+    // });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -23,6 +46,7 @@ class _CreateGroupFinishState extends State<CreateGroupFinish> {
             SizedBox(
               height: 50.h,
             ),
+
             Container(
               width: 384.w,
               alignment: Alignment.center,
@@ -38,28 +62,33 @@ class _CreateGroupFinishState extends State<CreateGroupFinish> {
                           child: Center(
                             child: CircleAvatar(
                                 radius: 55.r, // Adjust the size
-                                backgroundImage:
+                                backgroundImage: image !=null? FileImage(File(image)):
                                     AssetImage("assets/userjoin.png")),
                           )),
-                      Positioned(
-                          child: Container(
-                              // width: 30.w,
-                              // height: 30.h,
 
-                              decoration: BoxDecoration(
-                                color: AppColors.btnColor,
-                              ),
-                              child: Center(
-                                child: CircleAvatar(
-                                    radius: 15.r,
-                                    child: Container(
-                                      color: AppColors.btnColor,
-                                      padding: EdgeInsets.all(5.r),
-                                    child: Image.asset("assets/carema.png"),
-                                    )
-                                    // Adjust the size
-                                    ),
-                              ))),
+
+                      Positioned(
+                        bottom: 0.h,
+                          right: 0.w,
+                          child: InkWell(
+                            onTap: (){
+                              uploadProfilePic();
+                              print("Click");
+                            },
+                            child: Container(
+                                width: 35.w,
+                                height: 35.h,
+
+                                decoration: BoxDecoration(
+                                  color: AppColors.btnColor,
+                                  borderRadius: BorderRadius.circular(50.r)
+                                ),
+                                child:Icon(
+                                  Icons.camera_alt,
+                                  color: Colors.white,
+                                  size: 20.h,
+                                ), ),
+                          )),
                     ],
                   ),
                   Container(

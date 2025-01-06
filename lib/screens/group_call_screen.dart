@@ -22,7 +22,7 @@ class _GroupCallScreenState extends State<GroupCallScreen> {
           child: Column(
             children: [
              Container(
-               height: 100.h,
+               height: 150.h,
                child: GridView.builder(
                   scrollDirection: Axis.horizontal,
                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 5),
@@ -33,7 +33,7 @@ class _GroupCallScreenState extends State<GroupCallScreen> {
                     shrinkWrap: true,
                     itemBuilder:(context,index){
                       return  ListTile(
-                        leading: Image.asset("assets/icons/profile.png"),
+                        leading: Image.asset("assets/u2.png"),
                         title: Text("Md Habib Khan", style: TextStyle(
                             fontSize: 12.sp,
                             color: Colors.white
