@@ -127,12 +127,47 @@ class _ShowGroupDetails extends State<ShowGroupDetails> {
               "Topic: $description",
               style: TextStyle(fontSize: 18, color: Colors.black),
             ),
+
             const SizedBox(height: 10),
-            const SizedBox(height: 20),
-            const Text(
-              "This page received the above parameters from the previous navigation.",
-              style: TextStyle(fontSize: 16),
+            SizedBox(
+              height: 50.h,
+              width: double.infinity,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                    Expanded(
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: 6,
+                        itemBuilder: (context, index){
+                          return Container(
+                            height: 50.h,
+                              width: 50.h,
+                              child: Image.asset("assets/user4.png")
+                          );
+                        },
+                      ),
+                    ),
+                  GestureDetector(
+                    child: Container(
+                      height: 32.h,
+                      padding: EdgeInsets.all(4.0),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5.0),
+                        color: Color(0xff0B5F84),
+                      ),
+                      child: Column(
+                        children: [
+                          Text("Enter"),
+                          Text("Chat Room")
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ),
+            const SizedBox(height: 10),
             Expanded(
               child: Container(
                 color: Colors.grey,
@@ -147,7 +182,7 @@ class _ShowGroupDetails extends State<ShowGroupDetails> {
                   ),
                   border: Border(
                       top: BorderSide(color: Colors.black.withValues(alpha: 0.1))
-                  )
+                  ),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(12.0),
@@ -158,7 +193,7 @@ class _ShowGroupDetails extends State<ShowGroupDetails> {
                         Expanded(
                           child: Container(
                             height: 40.h,
-                            padding: EdgeInsets.symmetric(horizontal: 6.0),
+                            padding: EdgeInsets.symmetric(horizontal: 12.0),
                             decoration: BoxDecoration(
                                 border: Border.all(color: Colors.black.withValues(alpha: 0.2)),
                                 borderRadius: BorderRadius.circular(100)
@@ -168,25 +203,32 @@ class _ShowGroupDetails extends State<ShowGroupDetails> {
                               children: [
                                 Icon(
                                   CupertinoIcons.smiley,
-                                  size: 40.0,
+                                  size: 30.0,
                                   color: Colors.black.withValues(alpha: 0.6),
                                 ),
                                 Expanded(
                                   child: TextField(
+                                    decoration: InputDecoration(
+                                      hintText: "Text Writing...!",
+                                      hintStyle: TextStyle(
+                                        color: Colors.grey
+                                      )
+                                    ),
                                     style: TextStyle(
                                       color: Colors.black,
                                     ),
+
 
                                   ),
                                 ),
                                 Icon(
                                   Icons.image,
-                                  size: 40.0,
+                                  size: 30.0,
                                   color: Colors.black.withValues(alpha: 0.6),
                                 ),
                                 Icon(
                                   CupertinoIcons.plus_circle,
-                                  size: 40.0,
+                                  size: 30.0,
                                   color: Colors.black.withValues(alpha: 0.6),
                                 )
                               ],

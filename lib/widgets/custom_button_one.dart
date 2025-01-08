@@ -6,17 +6,25 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class CustomButtonOne extends StatelessWidget {
   final title;
   final width;
+  final height;
   final textColor;
   final fontSize;
+  final fontWeight;
   final color;
+  final radius;
+  final margin;
   VoidCallback onTab;
 
   CustomButtonOne({
     this.title,
     this.width,
+    this.height,
     this.fontSize,
+    this.fontWeight,
     this.textColor,
     this.color,
+    this.radius,
+    this.margin,
     required this.onTab,
 
   });
@@ -28,17 +36,17 @@ class CustomButtonOne extends StatelessWidget {
       child: Container(
         alignment: Alignment.center,
         width: width?? 100.w,
-        height: 35.h,
+        height:height?? 35.h,
         decoration: BoxDecoration(
           color: color?? Colors.black,
           border: Border.all(width: 0.5, color: Colors.black12),
-          borderRadius: BorderRadius.circular(15.r),
+          borderRadius: BorderRadius.circular(radius??15.r),
         ),
-        margin: EdgeInsets.symmetric(horizontal: 5.w),
+        margin: margin ?? EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.w),
         child:  Text(
           "$title",
           style: TextStyle(fontSize:fontSize?? 12.sp,
-              fontWeight: FontWeight.w700,
+              fontWeight: fontWeight?? FontWeight.w700,
 
               color: textColor?? Colors.white),
         ),

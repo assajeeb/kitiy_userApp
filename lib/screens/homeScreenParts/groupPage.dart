@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:kitti/screens/groupUserScreenParts/show_group_details.dart';
 import 'package:kitti/screens/homeScreenParts/countryPageScrollGroup.dart';
+import 'package:kitti/screens/roomManagement/create_room_page.dart';
 import 'package:kitti/widgets/custom_toggle_button.dart';
 
 class GroupPage extends StatefulWidget {
@@ -67,13 +69,29 @@ class _GroupPageState extends State<GroupPage> {
         Container(
           padding: EdgeInsets.only(top: 10.h, bottom: 5.h, left: 10.w),
           width: double.infinity,
-          child: Text(
-            "My Group",
-            style: TextStyle(
-              fontSize: 18.sp,
-              color: Colors.black,
-            ),
-            textAlign: TextAlign.left,
+          child: Row(
+            children: [
+              Text(
+                "My Group",
+                style: TextStyle(
+                  fontSize: 18.sp,
+                  color: Colors.black,
+                ),
+                textAlign: TextAlign.left,
+              ),
+              TextButton(
+                  onPressed: (){
+                    Get.to(CreateRoomPage());
+                  },
+                  child: Text(
+                      "Click to see CREATE ROOM page",
+                    style: TextStyle(
+                      fontSize: 12.sp,
+                      color: Colors.blue
+                    ),
+                  )
+              )
+            ],
           ),
         ),
         Container(

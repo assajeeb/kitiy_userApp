@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:kitti/screens/group_management_screen.dart';
+import 'package:kitti/screens/group_space_screen.dart';
+import 'package:kitti/screens/group_speak_management.dart';
 
 import 'package:kitti/screens/home_screen.dart';
-import 'package:kitti/screens/waiting_list_screen.dart';
+import 'package:kitti/screens/store_screen.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -32,7 +36,14 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: HomeScreen(),
+      child:HomeScreen(),
     );
   }
 }
+
+// CustomText(
+// title: "Group Space",
+// fontWeight: FontWeight.w400,
+// fontSize: 18.sp,
+// textColor: Colors.black,
+// ),

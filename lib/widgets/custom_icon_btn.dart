@@ -11,8 +11,10 @@ class CustomIconBtn extends StatelessWidget {
   final btnColor;
   final textColor;
   final fontSize;
-
+  final fontWeight;
+ final radius;
   final img;
+  final imgColor;
   final imgHeight;
   final imgWidth;
   VoidCallback onTab;
@@ -23,8 +25,10 @@ class CustomIconBtn extends StatelessWidget {
     this.btnColor,
     this.textColor,
     this.fontSize,
+    this.fontWeight,
+    this.radius,
     this.img,
-
+    this.imgColor,
     this.imgWidth,
     this.imgHeight,
     required this.onTab,
@@ -40,14 +44,14 @@ class CustomIconBtn extends StatelessWidget {
         decoration: BoxDecoration(
           color: btnColor?? Colors.grey[100],
           border: Border.all(width: 0.5, color: Colors.black12),
-          borderRadius: BorderRadius.circular(15.r),
+          borderRadius: BorderRadius.circular(radius?? 15.r),
         ),
         margin: EdgeInsets.symmetric(horizontal: 5.w),
         child:  Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              child: Image.asset("$img", color: Colors.white,
+              child: Image.asset("$img", color: imgColor?? Colors.green,
               height: 20,
                 width: 20,
                 fit: BoxFit.cover,
@@ -58,7 +62,9 @@ class CustomIconBtn extends StatelessWidget {
             ),
             Text(
               "$title",
-              style: TextStyle(fontSize:fontSize?? 12.sp, color: textColor?? Colors.black),
+              style: TextStyle(fontSize:fontSize?? 12.sp,
+                  fontWeight:fontWeight?? FontWeight.w400,
+                  color: textColor?? Colors.black),
             ),
           ],
         ),
