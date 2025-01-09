@@ -6,11 +6,11 @@ import 'package:kitti/screens/homeScreenParts/countryPageScrollGroup.dart';
 import 'package:kitti/screens/roomManagement/create_room_page.dart';
 import 'package:kitti/widgets/custom_toggle_button.dart';
 
-class GroupPage extends StatefulWidget {
-  const GroupPage({super.key});
+class HomeGroupPageList extends StatefulWidget {
+  const HomeGroupPageList({super.key});
 
   @override
-  _GroupPageState createState() => _GroupPageState();
+  _HomeGroupPageListState createState() => _HomeGroupPageListState();
 }
 
   List<Widget> visitedFollow = [
@@ -18,7 +18,7 @@ class GroupPage extends StatefulWidget {
     CountryPageScrollGroup()
   ];
 
-class _GroupPageState extends State<GroupPage> {
+class _HomeGroupPageListState extends State<HomeGroupPageList> {
   final List<Map<String, dynamic>> gridItems = [
     {
       "id": 12345,

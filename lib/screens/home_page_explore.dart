@@ -3,21 +3,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:kitti/screens/create_group.dart';
+import 'package:kitti/screens/create_page.dart';
 import 'package:kitti/screens/homeScreenParts/feed_back.dart';
 import 'package:kitti/screens/homeScreenParts/groupPage.dart';
 import 'package:kitti/screens/homeScreenParts/home.dart';
 import 'package:kitti/screens/mainFeedBack/mainFeedBackPage.dart';
 import 'package:kitti/util/colors.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class HomePageExplore extends StatefulWidget {
+  const HomePageExplore({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<HomePageExplore> createState() => _HomePageExploreState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomePageExploreState extends State<HomePageExplore> {
 
   int _currentPageIndex = 1;
 
@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
     const FeedBack(),
     const CreateGroupWidget(),//home
 
-    GroupPage()
+    HomeGroupPageList()
   ];
 
   void _navigateToPage(int index) {
@@ -138,7 +138,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
               onSelected: (value) {
                 if (value == 1) {
-                  Get.to(CreateGroup());
+                  Get.to(CreatePage());
                 } else if (value == 2) {
                   print("About selected");
                 }

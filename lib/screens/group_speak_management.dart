@@ -7,14 +7,14 @@ import '../widgets/custom_icon_btn.dart';
 import '../widgets/custom_text.dart';
 import '../widgets/large_icon_btn.dart';
 
-class GroupSpeakManagement extends StatefulWidget {
-  const GroupSpeakManagement({super.key});
+class JoinGroupSpeakManagement extends StatefulWidget {
+  const JoinGroupSpeakManagement({super.key});
 
   @override
-  State<GroupSpeakManagement> createState() => _GroupSpeakManagementState();
+  State<JoinGroupSpeakManagement> createState() => _JoinGroupSpeakManagementState();
 }
 
-class _GroupSpeakManagementState extends State<GroupSpeakManagement> {
+class _JoinGroupSpeakManagementState extends State<JoinGroupSpeakManagement> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(

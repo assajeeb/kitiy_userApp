@@ -8,14 +8,14 @@ import '../../util/colors.dart';
 import '../../widgets/custom_icon_btn.dart';
 import '../group_call_screen.dart';
 
-class UserScreen extends StatefulWidget {
-  const UserScreen({super.key});
+class SearchRoomPage extends StatefulWidget {
+  const SearchRoomPage({super.key});
 
   @override
-  State<UserScreen> createState() => _UserScreenState();
+  State<SearchRoomPage> createState() => _SearchRoomPageState();
 }
 
-class _UserScreenState extends State<UserScreen> {
+class _SearchRoomPageState extends State<SearchRoomPage> {
   @override
   Widget build(BuildContext context) {
     return Column(

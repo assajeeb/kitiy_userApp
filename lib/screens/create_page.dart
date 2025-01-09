@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:kitti/screens/groupUserScreenParts/create_group_finish.dart';
-import 'package:kitti/screens/group_user_screen.dart';
+import 'package:kitti/screens/search_group_page.dart';
 import 'package:kitti/screens/public_group.dart';
 import 'package:kitti/util/colors.dart';
 import 'package:kitti/widgets/custom_button_one.dart';
 
-class CreateGroup extends StatefulWidget {
-  CreateGroup({super.key});
+class CreatePage extends StatefulWidget {
+  CreatePage({super.key});
 
   @override
-  State<CreateGroup> createState() => _CreateGroupState();
+  State<CreatePage> createState() => _CreatePageState();
 }
 
-class _CreateGroupState extends State<CreateGroup> {
+class _CreatePageState extends State<CreatePage> {
   var groupValue;
 
   @override

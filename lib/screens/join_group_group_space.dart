@@ -173,7 +173,7 @@ class _GroupManagementScreenState extends State<GroupManagementScreen> {
             LargeIconBtn(
               onPressed: () {
 
-                Get.to(GroupSpeakManagement());
+                Get.to(JoinGroupSpeakManagement());
 
               },
               title: "Group Nickname",

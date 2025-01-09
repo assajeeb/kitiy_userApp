@@ -2,23 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:kitti/screens/groupUserScreenParts/group_screen.dart';
-import 'package:kitti/screens/groupUserScreenParts/user_screen.dart';
+import 'package:kitti/screens/groupUserScreenParts/search_room_page.dart';
 
 import 'package:kitti/screens/public_group.dart';
 import 'package:kitti/util/colors.dart';
 
 
-import 'create_group.dart';
+import 'create_page.dart';
 import 'group_call_screen.dart';
 
-class GroupUser extends StatefulWidget {
-  GroupUser({super.key});
+class SearchGroupPage extends StatefulWidget {
+  SearchGroupPage({super.key});
 
   @override
-  State<GroupUser> createState() => _GroupUserState();
+  State<SearchGroupPage> createState() => _GroupUserState();
 }
 
-class _GroupUserState extends State<GroupUser> {
+class _GroupUserState extends State<SearchGroupPage> {
   var groupValue;
 
   @override
@@ -142,7 +142,7 @@ class _GroupUserState extends State<GroupUser> {
               ],
               onSelected: (value) {
                 if (value == 1) {
-                  Get.to(CreateGroup());
+                  Get.to(CreatePage());
                 } else if (value == 2) {
                   print("About selected");
                 }
@@ -160,7 +160,7 @@ class _GroupUserState extends State<GroupUser> {
 
   int index = 0;
 
-  List<Widget> groupUserList = [GroupScreen(), UserScreen()];
+  List<Widget> groupUserList = [GroupScreen(), SearchRoomPage()];
 }
 
 class CustomButtonWidget extends StatelessWidget {

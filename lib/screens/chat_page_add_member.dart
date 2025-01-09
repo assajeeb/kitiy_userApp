@@ -4,12 +4,12 @@ import 'package:kitti/widgets/custom_text.dart';
 
 import '../widgets/circular_image.dart';
 
-class AddMemberScreen extends StatefulWidget {
+class ChatPageAddMember extends StatefulWidget {
   @override
-  _AddMemberScreenState createState() => _AddMemberScreenState();
+  _ChatPageAddMemberState createState() => _ChatPageAddMemberState();
 }
 
-class _AddMemberScreenState extends State<AddMemberScreen> {
+class _ChatPageAddMemberState extends State<ChatPageAddMember> {
   // Dummy contact list
   final List<Map<String, dynamic>> contacts = [
     {"name": "Md Habib khan", "img":"assets/u2.png" ,"isSelected": false},

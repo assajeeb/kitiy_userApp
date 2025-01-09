@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../screens/group_management_screen.dart';
+import '../screens/join_group_group_space.dart';
 
 class LargeIconBtn extends StatelessWidget {
   final title;

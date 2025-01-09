@@ -9,14 +9,14 @@ import '../widgets/circular_image.dart';
 import '../widgets/custom_text.dart';
 import '../widgets/large_icon_btn.dart';
 
-class StoreGroupManagement extends StatefulWidget {
-  const StoreGroupManagement({super.key});
+class ChatPageInfo extends StatefulWidget {
+  const ChatPageInfo({super.key});
 
   @override
-  State<StoreGroupManagement> createState() => _StoreGroupManagementState();
+  State<ChatPageInfo> createState() => _ChatPageInfoState();
 }
 
-class _StoreGroupManagementState extends State<StoreGroupManagement> {
+class _ChatPageInfoState extends State<ChatPageInfo> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(

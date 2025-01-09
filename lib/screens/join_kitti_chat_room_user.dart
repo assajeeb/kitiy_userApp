@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kitti/screens/create_group.dart';
+import 'package:kitti/screens/create_page.dart';
 import 'package:kitti/util/colors.dart';
 import 'package:kitti/widgets/custom_button_one.dart';
 
-class WaitingListScreen extends StatefulWidget {
-  const WaitingListScreen({super.key});
+class  JoinKitiChatRoomUser extends StatefulWidget {
+  const JoinKitiChatRoomUser({super.key});
 
   @override
-  State<WaitingListScreen> createState() => _WaitingListScreenState();
+  State<JoinKitiChatRoomUser> createState() => _JoinKitiChatRoomUserState();
 }
 
-class _WaitingListScreenState extends State<WaitingListScreen> {
+class _JoinKitiChatRoomUserState extends State<JoinKitiChatRoomUser> {
   List<Map<String, dynamic>> userList = [
     {
       "img": "assets/u1.png",
