@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:kitiy_userapp/pages/Agency/agency.dart';
 
-import '../friends/friend.dart';
+
 
 class HostController extends GetxController {
   late TextEditingController textEditingController;

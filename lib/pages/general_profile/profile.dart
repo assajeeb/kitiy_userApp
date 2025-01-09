@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:kitiy_userapp/pages/general_profile/notification.dart';
 import 'package:kitiy_userapp/pages/general_profile/password_change.dart';
 import 'package:kitiy_userapp/pages/general_profile/security_pri.dart';
 import 'package:kitiy_userapp/pages/general_profile/term_condi.dart';
 
+import '../friend/frds_tab.dart';
 import 'about_us.dart';
 import 'block.dart';
+import 'daily_user.dart';
 import 'game_center.dart';
 import 'helping.dart';
 
@@ -39,9 +42,15 @@ class _ProfileState extends State<Profile> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    CircleAvatar(
-                      radius: 50.r,
-                      backgroundImage: AssetImage("images/image/smp.png"),
+                    // eta hobe na(friend list & request)
+                    GestureDetector(
+                      onTap: (){
+                        Get.to(()=>FrndsTab());
+                      },
+                      child: CircleAvatar(
+                        radius: 50.r,
+                        backgroundImage: AssetImage("images/image/smp.png"),
+                      ),
                     ),
                     SizedBox(height: 15.w,),
                     Text("Md Habib",style: TextStyle(fontSize: 20.sp,fontWeight: FontWeight.w400,color: Color(0xff202020)),),
@@ -65,6 +74,8 @@ class _ProfileState extends State<Profile> {
 
               Divider(height: 5,color: Color(0xff808080).withOpacity(.4),thickness: 2.8,),
               profileItems("kity", "Kitti Daily Task ",() {
+
+                Get.to(()=>DailyUser());
 
               },),
               profileItems("game", "Game Center",() {
@@ -97,6 +108,8 @@ class _ProfileState extends State<Profile> {
                 Get.to(()=>TermCondi());
               },),
               profileItems("noti", "Notification",() {
+
+                Get.to(()=>Notifications());
 
               },),
               profileItems("share", "Share",() {
