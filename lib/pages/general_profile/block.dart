@@ -32,46 +32,37 @@ class _BlockState extends State<Block> {
           icon: Icon(Icons.arrow_back, color: Colors.black),
         ),
       ),
-      body: Padding(
-        padding:  EdgeInsets.symmetric(horizontal: 15.w),
-        child: Column(
-          children: [
-            Text("Blocked users are not allowed to message you, call you, or invite you to groups and VoiceClub rooms.",
+      body: Column(
+        children: [
+          Padding(
+            padding:  EdgeInsets.symmetric(horizontal: 15.w),
+            child: Text("Blocked users are not allowed to message you, call you, or invite you to groups and VoiceClub rooms.",
               style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w400,color: Color(0xff808080)),),
-            SizedBox(height: 15.h,),
-            Divider(color:  Color(0xff808080).withOpacity(.4),),
-            Obx(()=>Expanded(
-              child: ListView.builder(
-                  itemCount: blockController.blockList.length,
-                  itemBuilder: (context, index){
-                    return Column(
-                      children: [
-                        Padding(
-                          padding:  EdgeInsets.symmetric(vertical: 5.h,horizontal: 5.w),
-                          child: Row(
-                            children: [
-                              CircleAvatar(
-                                radius: 22.5.r,
-                                backgroundImage: AssetImage(blockController.blockList[index]["image"]),
-                              ),
-                              SizedBox(width: 15.w,),
-                              Text(blockController.blockList[index]['text'],style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.w400,color: Color(0xff0B5F84)),),
-                              Spacer(),
+          ),
+          SizedBox(height: 15.h,),
+          Divider(color:  Color(0xff808080).withOpacity(.4),),
+          Obx(()=>Expanded(
+            child: ListView.builder(
+                itemCount: blockController.blockList.length,
+                itemBuilder: (context, index){
+                  return ListTile(
+                    contentPadding: EdgeInsets.symmetric(vertical: 5.h,horizontal: 15.w),
+                    leading: CircleAvatar(
+                      radius: 22.5.r,
+                      backgroundImage: AssetImage(blockController.blockList[index]["image"]),
+                    ),
+                    trailing:  Image.asset("images/icons/blocic.png",width: 25.w,height: 25.h,),
+                    title: Text(blockController.blockList[index]['text'],style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.w400,color: Color(0xff0B5F84)),),
+                    shape: UnderlineInputBorder(
+                      borderSide: BorderSide(color:  Color(0xff808080).withOpacity(.3),)
+                    ),
 
-                              Image.asset("images/icons/blocic.png",width: 25.w,height: 25.h,)
+                  );
 
-                            ],
-                          ),
-                        ),
-                        Divider(color:  Color(0xff808080).withOpacity(.3),),
-                      ],
-                    );
+                }),
+          ))
 
-                  }),
-            ))
-
-          ],
-        ),
+        ],
       ),
     );
   }

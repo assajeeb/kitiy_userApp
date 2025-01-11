@@ -33,11 +33,7 @@ class _FriendsTabState extends State<FriendsTab> {
                     ,style: TextStyle(color: Color(0xff0B5F84),fontSize: 18.sp,fontWeight: FontWeight.w400,),),
 
                Spacer(),
-                  GestureDetector(
-                    onTap: (){
-                      Get.to(HostReq());
-                    },
-                      child: Image.asset("images/icons/req.png",width: 35.w,height: 35.w,))
+                  Image.asset("images/icons/req.png",width: 35.w,height: 35.w,)
                 ],
               ),
             ),

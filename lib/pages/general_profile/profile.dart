@@ -25,11 +25,6 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //app bar hobe na akkahane
-      appBar: AppBar(
-        title: Text("genaral profile"),
-      ),
-
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15.w),
@@ -43,14 +38,9 @@ class _ProfileState extends State<Profile> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     // eta hobe na(friend list & request)
-                    GestureDetector(
-                      onTap: (){
-                        Get.to(()=>FrndsTab());
-                      },
-                      child: CircleAvatar(
-                        radius: 50.r,
-                        backgroundImage: AssetImage("images/image/smp.png"),
-                      ),
+                    CircleAvatar(
+                      radius: 50.r,
+                      backgroundImage: AssetImage("images/image/smp.png"),
                     ),
                     SizedBox(height: 15.w,),
                     Text("Md Habib",style: TextStyle(fontSize: 20.sp,fontWeight: FontWeight.w400,color: Color(0xff202020)),),
@@ -173,28 +163,18 @@ class _ProfileState extends State<Profile> {
     );
   }
   Widget profileItems(String image, text, VoidCallback onTap){
-    return  GestureDetector(
+    return  ListTile(
       onTap: onTap,
-      child: Column(
-        children: [
-          SizedBox(
-            height: 40.h,
-            child: Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 5.w),
-              child: Row(
-                children: [
-                  Image.asset("images/icons/$image.png",width: 25.w,height: 25.w,),
-                  SizedBox(width: 10.w,),
-                  Text("$text",style: TextStyle(fontSize: 15.sp,color: Color(0xff484545),fontWeight: FontWeight.w400),),
-                  Spacer(),
-                  Icon(Icons.arrow_forward_ios_rounded,size: 20.r,color: Color(0xff808080),)
-                ],
-              ),
-            ),
-          ),
-          Divider(color:  Color(0xff808080).withOpacity(.4),),
-        ],
+      contentPadding: EdgeInsets.symmetric(horizontal: 5.w),
+      leading:   Image.asset("images/icons/$image.png",width: 25.w,height: 25.w,),
+        trailing:  Icon(Icons.arrow_forward_ios_rounded,size: 20.r,color: Color(0xff808080),),
+      title: Text("$text",style: TextStyle(fontSize: 15.sp,color: Color(0xff484545),fontWeight: FontWeight.w400),),
+      shape: UnderlineInputBorder(
+        borderSide: BorderSide(
+          color:  Color(0xff808080).withOpacity(.4),
+        )
       ),
+
     );
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import '../recharge_coin/recharge_coin.dart';
 import 'friend_listC.dart';
 import 'inbox.dart';
 
@@ -29,9 +30,14 @@ class _FriendListState extends State<FriendList> {
                     padding:  EdgeInsets.symmetric(vertical: 10.h,horizontal: 15.w),
                     child: Row(
                       children: [
-                        CircleAvatar(
-                          radius: 22.5.r,
-                          backgroundImage: AssetImage(friendListController.friendList[index]["image"]),
+                        GestureDetector(
+                          onTap:(){
+                            Get.to(()=>RechargeCoin());
+                          },
+                          child: CircleAvatar(
+                            radius: 22.5.r,
+                            backgroundImage: AssetImage(friendListController.friendList[index]["image"]),
+                          ),
                         ),
                         SizedBox(width: 15.w,),
                         Column(

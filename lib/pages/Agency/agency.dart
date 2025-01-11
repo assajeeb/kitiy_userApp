@@ -116,125 +116,118 @@ class _AgencyState extends State<Agency> with SingleTickerProviderStateMixin {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(
-          height: 220.h,
-          child: Obx(
-                () => ListView.builder(
+        Obx(() => Expanded(
+          child: ListView.builder(
               itemCount: requests.length,
               itemBuilder: (context, index) {
-
-                return GestureDetector(
-                  onTap: (){
-                    Get.to(TopUp());
-                  },
-                  child: Container(
-                    margin: EdgeInsets.symmetric(vertical: 5.h, horizontal: 15.w),
-                    decoration: BoxDecoration(
-                      color: Color(0xffEBECF0),
-                      borderRadius: BorderRadius.circular(15.r),
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 12.h),
-                      child: Row(
-                        children: [
-                          CircleAvatar(
-                            radius: 25.r,
-                            backgroundImage: AssetImage("images/image/smp.png"),
-                          ),
-                          SizedBox(width: 15.w),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              _tabController.index == 1
-                                  ? Text(
-                                'Tamanna',
-                                style: TextStyle(
-                                    color: Color(0xff202020),
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w500),
-                              )
-                                  : Text(
-                                'Agent User ID: 111111',
-                                style: TextStyle(
-                                    color: Color(0xff202020),
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w500),
-                              ),
-                              SizedBox(height: 5.h),
-                              _tabController.index == 1
-                                  ? Text(
-                                'User ID:1234564',
+          
+                return Container(
+                  margin: EdgeInsets.symmetric(vertical: 5.h, horizontal: 15.w),
+                  decoration: BoxDecoration(
+                    color: Color(0xffEBECF0),
+                    borderRadius: BorderRadius.circular(15.r),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 12.h),
+                    child: Row(
+                      children: [
+                        CircleAvatar(
+                          radius: 25.r,
+                          backgroundImage: AssetImage("images/image/smp.png"),
+                        ),
+                        SizedBox(width: 15.w),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            _tabController.index == 1
+                                ? Text(
+                              'Tamanna',
+                              style: TextStyle(
+                                  color: Color(0xff202020),
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.w500),
+                            )
+                                : Text(
+                              'Agent User ID: 111111',
+                              style: TextStyle(
+                                  color: Color(0xff202020),
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                            SizedBox(height: 5.h),
+                            _tabController.index == 1
+                                ? Text(
+                              'User ID:1234564',
+                              style: TextStyle(
+                                  color: Color(0xff808080),
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w400),
+                            )
+                                : Text(
+                              'Name: P Habib Khan',
+                              style: TextStyle(
+                                  color: Color(0xff0B5F84),
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                            SizedBox(height: 5.h),
+                            _tabController.index == 1
+                                ? Text(
+                              '017***********',
+                              style: TextStyle(
+                                  color: Color(0xff0B5F84),
+                                  fontSize: 15.sp,
+                                  fontWeight: FontWeight.w400),
+                            )
+                                : Text(
+                              '20/02/2024',
+                              style: TextStyle(
+                                  color: Color(0xff808080),
+                                  fontSize: 15.sp,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ],
+                        ),
+                        Spacer(),
+                        _tabController.index == 1
+                            ? Column(
+                          children: [
+                            Row(
+                              children: [
+                                Image.asset("images/icons/coin.png",
+                                    width: 20.w, height: 20.w),
+                                SizedBox(width: 3.w),
+                                Text('1000',
+                                    style: TextStyle(
+                                        color: Color(0xff202020),
+                                        fontSize: 15.sp,
+                                        fontWeight: FontWeight.w400)),
+                              ],
+                            ),
+                            SizedBox(height: 5.h),
+                            Text('20/02/2024',
                                 style: TextStyle(
                                     color: Color(0xff808080),
-                                    fontSize: 14.sp,
-                                    fontWeight: FontWeight.w400),
-                              )
-                                  : Text(
-                                'Name: P Habib Khan',
-                                style: TextStyle(
-                                    color: Color(0xff0B5F84),
-                                    fontSize: 14.sp,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                              SizedBox(height: 5.h),
-                              _tabController.index == 1
-                                  ? Text(
-                                '017***********',
-                                style: TextStyle(
-                                    color: Color(0xff0B5F84),
-                                    fontSize: 15.sp,
-                                    fontWeight: FontWeight.w400),
-                              )
-                                  : Text(
-                                '20/02/2024',
-                                style: TextStyle(
-                                    color: Color(0xff808080),
-                                    fontSize: 15.sp,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                            ],
-                          ),
-                          Spacer(),
-                          _tabController.index == 1
-                              ? Column(
-                            children: [
-                              Row(
-                                children: [
-                                  Image.asset("images/icons/coin.png",
-                                      width: 20.w, height: 20.w),
-                                  SizedBox(width: 3.w),
-                                  Text('1000',
-                                      style: TextStyle(
-                                          color: Color(0xff202020),
-                                          fontSize: 15.sp,
-                                          fontWeight: FontWeight.w400)),
-                                ],
-                              ),
-                              SizedBox(height: 5.h),
-                              Text('20/02/2024',
-                                  style: TextStyle(
-                                      color: Color(0xff808080),
-                                      fontSize: 12.sp,
-                                      fontWeight: FontWeight.w400)),
-                            ],
-                          )
-                              : Row(
-                            children: [
-                              Icon(Icons.close,
-                                  color: Color(0xff202020), size: 20.r),
-                              SizedBox(width: 10.w),
-                              Icon(Icons.check,
-                                  color: Color(0xff202020), size: 20.r),
-                            ],
-                          ),
-                        ],
-                      ),
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w400)),
+                          ],
+                        )
+                            : Row(
+                          children: [
+                            Icon(Icons.close,
+                                color: Color(0xff202020), size: 20.r),
+                            SizedBox(width: 10.w),
+                            Icon(Icons.check,
+                                color: Color(0xff202020), size: 20.r),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
                 );
               },
             ),
-          ),
+        ),
         ),
       ],
     );

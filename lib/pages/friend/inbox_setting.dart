@@ -10,7 +10,7 @@ class InboxSetting extends StatefulWidget {
   @override
   State<InboxSetting> createState() => _InboxSettingState();
 }
-
+//
 class _InboxSettingState extends State<InboxSetting> {
 
   InboxsettingController inboxsettingController=Get.put(InboxsettingController());

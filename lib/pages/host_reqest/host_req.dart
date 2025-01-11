@@ -73,63 +73,58 @@ class _HostReqState extends State<HostReq> {
               child: ListView.builder(
                 itemCount: 1,
                 itemBuilder: (context, index) {
-                  return GestureDetector(
-                    onTap: () {
-                      Get.defaultDialog(
-                        title: "",
-                        content: Column(
+                  return Container(
+                    padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15.r),
+                      color: Color(0xffEBECF0),
+                    ),
+                    child: Row(
+                      children: [
+                        CircleAvatar(
+                          radius: 27.r,
+                          backgroundImage: AssetImage("images/image/smp.png"),
+                        ),
+                        SizedBox(width: 10.sp),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            GestureDetector(
-                              onTap: () {
-                                Get.to(Agency());
-                              },
-                              child: Image.asset("images/icons/right.png", width: 50.w, height: 50.w),
-                            ),
-                            SizedBox(height: 20.h),
                             Text(
-                              "User ID:111111",
-                              style: TextStyle(fontSize: 20.sp, color: Colors.black, fontWeight: FontWeight.w500),
+                              "User ID: 111111",
+                              style: TextStyle(color: Color(0xff202020), fontSize: 16.sp, fontWeight: FontWeight.w500),
                             ),
-                            SizedBox(height: 10.h),
                             Text(
-                              "Successfully Sending",
-                              style: TextStyle(fontSize: 16.sp, color: Colors.black, fontWeight: FontWeight.w400),
-                            )
+                              "Name: P Habib Khan",
+                              style: TextStyle(color: Color(0xff0B5F84), fontSize: 14.sp, fontWeight: FontWeight.w400),
+                            ),
                           ],
                         ),
-                      );
-                    },
-                    child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15.r),
-                        color: Color(0xffEBECF0),
-                      ),
-                      child: Row(
-                        children: [
-                          CircleAvatar(
-                            radius: 27.r,
-                            backgroundImage: AssetImage("images/image/smp.png"),
-                          ),
-                          SizedBox(width: 10.sp),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "User ID: 111111",
-                                style: TextStyle(color: Color(0xff202020), fontSize: 16.sp, fontWeight: FontWeight.w500),
-                              ),
-                              Text(
-                                "Name: P Habib Khan",
-                                style: TextStyle(color: Color(0xff0B5F84), fontSize: 14.sp, fontWeight: FontWeight.w400),
-                              ),
-                            ],
-                          ),
-                          Spacer(),
-                          Image.asset("images/icons/click.png", width: 35.w, height: 35.w)
-                        ],
-                      ),
+                        Spacer(),
+                        GestureDetector(
+
+                            onTap: () {
+                              Get.defaultDialog(
+                                title: "",
+                                content: Column(
+                                  children: [
+                                    Image.asset("images/icons/right.png", width: 50.w, height: 50.w),
+                                    SizedBox(height: 20.h),
+                                    Text(
+                                      "User ID:111111",
+                                      style: TextStyle(fontSize: 20.sp, color: Colors.black, fontWeight: FontWeight.w500),
+                                    ),
+                                    SizedBox(height: 10.h),
+                                    Text(
+                                      "Successfully Sending",
+                                      style: TextStyle(fontSize: 16.sp, color: Colors.black, fontWeight: FontWeight.w400),
+                                    )
+                                  ],
+                                ),
+                              );
+                            },
+                            child: Image.asset("images/icons/click.png", width: 35.w, height: 35.w))
+                      ],
                     ),
                   );
                 },

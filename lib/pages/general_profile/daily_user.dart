@@ -39,7 +39,6 @@ class _DailyUserState extends State<DailyUser> {
         actions: [
           IconButton(
             onPressed: () {
-              Get.back();
             },
             icon: Icon(Icons.access_time_sharp, color: Colors.white,size: 25.r,),
           ),
@@ -52,7 +51,7 @@ class _DailyUserState extends State<DailyUser> {
             Container(
               margin: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
               width: 400.w,
-            height: 448.w,
+            height: 455.w,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15.r),
               color: Colors.white
@@ -397,7 +396,7 @@ class _DailyUserState extends State<DailyUser> {
             Container(
               margin: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
               width: 400.w,
-              height: 298.w,
+              height: 305.w,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.r),
                   color: Colors.white
@@ -644,7 +643,7 @@ class _DailyUserState extends State<DailyUser> {
             Container(
               margin: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
               width: 400.w,
-              height: 298.w,
+              height: 305.w,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.r),
                   color: Colors.white

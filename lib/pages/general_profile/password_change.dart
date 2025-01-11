@@ -21,7 +21,23 @@ class PasswordController extends GetxController {
 class NewPasswordController extends GetxController {
   late TextEditingController textEditingController;
   var showPass = false.obs;
-  var showPass1 = false.obs;
+
+  @override
+  void onInit() {
+    super.onInit();
+    textEditingController = TextEditingController();
+  }
+
+  @override
+  void onClose() {
+    textEditingController.dispose();
+    super.onClose();
+  }
+}
+
+class CPasswordController extends GetxController {
+  late TextEditingController textEditingController;
+  var showPass2 = false.obs;
 
   @override
   void onInit() {
@@ -46,7 +62,7 @@ class PasswordChange extends StatefulWidget {
 class _PasswordChangeState extends State<PasswordChange> {
   final PasswordController passwordController = Get.put(PasswordController());
   final NewPasswordController newPasswordController = Get.put(NewPasswordController());
-
+  final CPasswordController cPasswordController = Get.put(CPasswordController());
 
   @override
   Widget build(BuildContext context) {
@@ -113,7 +129,7 @@ class _PasswordChangeState extends State<PasswordChange> {
             SizedBox(height: 10.h),
             Obx(
                   () => TextFormField(
-                    obscureText: !newPasswordController.showPass.value,
+                obscureText: !newPasswordController.showPass.value,
                 controller: newPasswordController.textEditingController,
                 decoration: InputDecoration(
                   hintText: "Password",
@@ -150,48 +166,62 @@ class _PasswordChangeState extends State<PasswordChange> {
               ),
             ),
             SizedBox(height: 10.h),
-            Obx(()=>TextFormField(
-              obscureText: !newPasswordController.showPass1.value,
-              decoration: InputDecoration(
-                hintText: "Password",
-                hintStyle: TextStyle(
-                  color: const Color(0xff808080),
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w400,
-                ),
-                enabledBorder: const OutlineInputBorder(
-                  borderSide: BorderSide(color: Color(0xff808080)),
-                ),
-                focusedBorder: const OutlineInputBorder(
-                  borderSide: BorderSide(color: Color(0xff808080)),
-                ),
-                suffixIcon: IconButton(
-                  icon: Icon(
-                    newPasswordController.showPass1.value ? Icons.visibility : Icons.visibility_off,
-                    color: Color(0xff808080),
+            Obx(
+                  () => TextFormField(
+                obscureText: !cPasswordController.showPass2.value,
+                controller: cPasswordController.textEditingController, // Fixed the missing controller
+                decoration: InputDecoration(
+                  hintText: "Password",
+                  hintStyle: TextStyle(
+                    color: const Color(0xff808080),
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w400,
                   ),
-                  onPressed: () {
-                    newPasswordController.showPass1.toggle();
-                  },
+                  enabledBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xff808080)),
+                  ),
+                  focusedBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xff808080)),
+                  ),
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                      cPasswordController.showPass2.value ? Icons.visibility : Icons.visibility_off,
+                      color: Color(0xff808080),
+                    ),
+                    onPressed: () {
+                      cPasswordController.showPass2.toggle();
+                    },
+                  ),
                 ),
               ),
-            ),),
-            SizedBox(height: 25.h,),
+            ),
+            SizedBox(height: 25.h),
             SizedBox(
               width: double.infinity,
               height: 48.h,
               child: ElevatedButton(
-                onPressed: (){},
-                child: Text("Save change",style: TextStyle(color:Colors.white,fontSize: 18.sp,fontWeight: FontWeight.w400),),
+                onPressed: () {
+                  // Perform save operation
+                  print("Old Password: ${passwordController.textEditingController.text}");
+                  print("New Password: ${newPasswordController.textEditingController.text}");
+                  print("Confirmed Password: ${cPasswordController.textEditingController.text}");
+                },
+                child: Text(
+                  "Save change",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
                 style: ButtonStyle(
-                    backgroundColor: WidgetStatePropertyAll(Color(0xff0B5F84) ),
-                    shape: WidgetStatePropertyAll(RoundedRectangleBorder(
-                        side: BorderSide(
-                            color: Color(0xff0B5F84)
-                        ),
-                        borderRadius: BorderRadius.circular(5.r)
-                    ))
-
+                  backgroundColor: MaterialStateProperty.all(Color(0xff0B5F84)),
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      side: BorderSide(color: Color(0xff0B5F84)),
+                      borderRadius: BorderRadius.circular(5.r),
+                    ),
+                  ),
                 ),
               ),
             ),
