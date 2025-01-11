@@ -35,12 +35,16 @@ class _CreatePageState extends State<CreatePage> {
                     scrollDirection: Axis.horizontal,
                     itemCount: 4,
                     itemBuilder: (context, index) {
-                      return SizedBox(
-                          width: 40.w,
-                          height: 40.h,
-                          child: Container(
-                              margin: EdgeInsets.symmetric(horizontal: 5.w),
-                              child: Image.asset("assets/icons/profile.png")));
+                      return Padding(padding: EdgeInsets.all(5.r)
+                            ,
+                            child: CircleAvatar(
+                              radius: 40.r,
+                              backgroundImage: AssetImage("assets/userjoin.png"),
+                              //child: Image.asset("assets/userjoin.png"),
+
+                            ),
+
+                      );
                     }),
               ),
               SizedBox(
@@ -90,6 +94,8 @@ class _CreatePageState extends State<CreatePage> {
       bottomNavigationBar: CustomButtonOne(
         title: "Create Group",
         textColor: Colors.white,
+        fontSize: 16.sp,
+        fontWeight: FontWeight.w400,
         color: AppColors.btnColor,
         width: 150.w,
         onTab: (){
@@ -133,6 +139,7 @@ class CustomButton extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
+
                 child: Image.asset("$img"),
               ),
               SizedBox(

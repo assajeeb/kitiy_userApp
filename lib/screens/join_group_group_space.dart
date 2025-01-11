@@ -122,6 +122,9 @@ class _GroupManagementScreenState extends State<GroupManagementScreen> {
                       ),
                     ),
                   ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
                   Row(
                     children: [
                       Container(
@@ -143,7 +146,9 @@ class _GroupManagementScreenState extends State<GroupManagementScreen> {
                         width: 10.w,
                       ),
                       InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Get.to(JoinGroupSpeakManagement());
+                          },
                           child: Image.asset(
                             "assets/icons/3dot.png",
                             width: 15.w,
@@ -173,7 +178,7 @@ class _GroupManagementScreenState extends State<GroupManagementScreen> {
             LargeIconBtn(
               onPressed: () {
 
-                Get.to(JoinGroupSpeakManagement());
+           //     Get.to(JoinGroupSpeakManagement());
 
               },
               title: "Group Nickname",

@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:kitti/screens/chat_page_add_member.dart';
+import 'package:kitti/screens/groupUserScreenParts/group_screen.dart';
 import 'package:kitti/screens/join_group_group_space.dart';
 import 'package:kitti/screens/group_space_screen.dart';
 import 'package:kitti/screens/group_speak_management.dart';
 import 'package:kitti/screens/join_kiti_chat_room_user2.dart';
+import 'package:kitti/screens/roomManagement/create_room_page.dart';
 import 'package:kitti/screens/search_group_page.dart';
 import 'package:kitti/screens/homeScreenParts/groupPage.dart';
 
@@ -13,7 +15,7 @@ import 'package:kitti/screens/home_page_explore.dart';
 import 'package:kitti/screens/join_group_tootls.dart';
 import 'package:kitti/screens/join_kitti_chat_room_user.dart';
 import 'package:kitti/screens/chat_page_info.dart';
-import 'package:kitti/screens/voice_lup_otification.dart';
+import 'package:kitti/screens/voice_clup_notification.dart';
 
 
 void main() {
@@ -41,11 +43,13 @@ class MyApp extends StatelessWidget {
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
           home: child,
+
         );
       },
 
-      child:VoiceLupOtification(),
-    //  child: HomeGroupPageList(),
+     child:HomePageExplore(),
+
+     // child: CreateRoomPage(),
     );
   }
 }

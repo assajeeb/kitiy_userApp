@@ -8,6 +8,7 @@ import 'package:kitti/widgets/custom_icon_btn.dart';
 import '../widgets/circular_image.dart';
 import '../widgets/custom_text.dart';
 import '../widgets/large_icon_btn.dart';
+import 'chat_page_add_member.dart';
 
 class JoinGroupTools extends StatefulWidget {
   const JoinGroupTools({super.key});
@@ -185,7 +186,9 @@ class _StoreScreenState extends State<JoinGroupTools> {
               Align(
                 alignment: Alignment.centerLeft,
                 child: CustomIconBtn(
-                  onTab: () {},
+                  onTab: () {
+                    Get.to(ChatPageAddMember());
+                  },
                   title: "Add Member",
                   width: 151.w,
                   textColor: Colors.black,
@@ -198,7 +201,7 @@ class _StoreScreenState extends State<JoinGroupTools> {
               LargeIconBtn(
           
                 onPressed: () {
-          
+          Get.to(GroupManagementScreen());
           
                 },
                 title: "Group Management",

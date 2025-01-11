@@ -75,18 +75,23 @@ class _CreateGroupFinishState extends State<CreateGroupFinish> {
                               uploadProfilePic();
                               print("Click");
                             },
+
+
+
+
+
                             child: Container(
-                                width: 35.w,
-                                height: 35.h,
+                                width: 30.w,
+                                height: 30.h,
 
                                 decoration: BoxDecoration(
                                   color: AppColors.btnColor,
-                                  borderRadius: BorderRadius.circular(50.r)
+                                  borderRadius: BorderRadius.circular(100.r)
                                 ),
                                 child:Icon(
                                   Icons.camera_alt,
                                   color: Colors.white,
-                                  size: 20.h,
+                                  size: 23.w,
                                 ), ),
                           )),
                     ],

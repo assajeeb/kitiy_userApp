@@ -66,6 +66,7 @@ flutter:
   assets:
     - assets/
     - assets/icons/
+    - assets/navicon/
     - assets/groupPage/
     - assets/mng_room/
   #   - images/a_dot_ham.jpeg

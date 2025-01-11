@@ -1,7 +1,11 @@
 import 'package:country_flags/country_flags.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:kitti/screens/homeScreenParts/countryPageScrollGroup.dart';
+import 'package:kitti/screens/see_post_details/see_post_details.dart';
+
+import '../voice_clup_notification.dart';
 
 class CreateGroupWidget extends StatefulWidget {
   const CreateGroupWidget({super.key});
@@ -83,10 +87,15 @@ class _CreateGroupWidgetState extends State<CreateGroupWidget> {
                       height: 40.h,
                       child: Image.asset("assets/icons/mask.png"),
                     ),
-                    Container(
-                      width: 30.w,
-                      height: 40.h,
-                      child: Image.asset("assets/icons/bell.png"),
+                    InkWell(
+                      onTap: (){
+                        Get.to(VoiceClupNotification());
+                      },
+                      child: Container(
+                        width: 30.w,
+                        height: 40.h,
+                        child: Image.asset("assets/icons/bell.png"),
+                      ),
                     ),
                     Container(
                       width: 30.w,
@@ -118,7 +127,7 @@ class RecommandedWidget extends StatelessWidget {
     {
       "title": "প্বিন্দাস লাইফ",
       "status": "গানে গানে আড্ডা",
-      "img": "assets/user2.png",
+      "img": "assets/u21.png",
     },
     {
       "title": "ƊЄƑƛƲԼƬЄƦ ƓƖƦԼ",
@@ -128,7 +137,7 @@ class RecommandedWidget extends StatelessWidget {
     {
       "title": "প্বিন্দাস লাইফ",
       "status": "গানে গানে আড্ডা",
-      "img": "assets/user2.png",
+      "img": "assets/u21.png",
     },
     {
       "title": "ƊЄƑƛƲԼƬЄƦ ƓƖƦԼ",
@@ -154,170 +163,175 @@ class RecommandedWidget extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 20.0),
       itemCount: recommandedList.length,
       itemBuilder: (context, index) {
-        return Container(
-            width: 320.w,
-            margin: EdgeInsets.symmetric(horizontal: 20.0),
-            padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.3),
-                    offset: Offset(0.0, 0.0),
-                    blurRadius: 10,
-                    blurStyle: BlurStyle.normal
-                )
-              ],
-              borderRadius: BorderRadius.circular(10.r)
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                // Left Side
-                SizedBox(
-                  width: 233.w,
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          SizedBox(
-                            width: 40.w,
-                            height: 40.h,
-                            child: Image.asset(
-                                "${recommandedList[index]['img']}"),
-                          ),
-                          SizedBox(
-                            width: 5.w,
-                          ),
-                          Text(
-                            "${recommandedList[index]['status']}",
-                            style: TextStyle(
-                                fontSize: 12.sp, color: Colors.black),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 5.h,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text(
-                            "প্রেম হবে Vs বিয়ে হবে",
-                            style: TextStyle(
-                                fontSize: 12.sp, color: Colors.black),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 5.h,
-                      ),
-                      SizedBox(
-
-                        height: 40.h,
-                        child: ListView.builder(
-                            physics: BouncingScrollPhysics(),
-                            scrollDirection: Axis.horizontal,
-                            itemCount: 4,
-                            itemBuilder: (context, index) {
-                              return Stack(
-                                children: [
-                                  SizedBox(
-                                      width: 40.w,
-                                      height: 40.h,
-                                      child: Container(
-                                          margin: EdgeInsets.symmetric(
-                                              horizontal: 5.w),
-                                          child: Image.asset(
-                                              "assets/user1.png"))),
-                                  Positioned(
-                                      child: Image.asset("assets/group.png"))
-                                ],
-                              );
-                            }),
-                      ),
-                    ],
-                  ),
-                ),
-                // Right side
-                SizedBox(
-                  width: 110.w,
-                  child: Column(
-                    children: [
-                      Stack(
-                        clipBehavior: Clip.none,
-                        children: [
-                          Container(
-                              width: 100.w,
-                              height: 75.h,
-                              margin: EdgeInsets.symmetric(horizontal: 5.w),
+        return GestureDetector(
+          onTap: (){
+            Get.to(SeePostDetails());
+          },
+          child: Container(
+              width: 320.w,
+              margin: EdgeInsets.symmetric(horizontal: 20.0),
+              padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.3),
+                      offset: Offset(0.0, 0.0),
+                      blurRadius: 10,
+                      blurStyle: BlurStyle.normal
+                  )
+                ],
+                borderRadius: BorderRadius.circular(10.r)
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  // Left Side
+                  SizedBox(
+                    width: 233.w,
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            SizedBox(
+                              width: 40.w,
+                              height: 40.h,
                               child: Image.asset(
-                                "${recommandedList[index]['img']}",
-                                width: 80.w,
+                                  "${recommandedList[index]['img']}"),
+                            ),
+                            SizedBox(
+                              width: 5.w,
+                            ),
+                            Text(
+                              "${recommandedList[index]['status']}",
+                              style: TextStyle(
+                                  fontSize: 12.sp, color: Colors.black),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 5.h,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              "প্রেম হবে Vs বিয়ে হবে",
+                              style: TextStyle(
+                                  fontSize: 12.sp, color: Colors.black),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 5.h,
+                        ),
+                        SizedBox(
+
+                          height: 40.h,
+                          child: ListView.builder(
+                              physics: BouncingScrollPhysics(),
+                              scrollDirection: Axis.horizontal,
+                              itemCount: 4,
+                              itemBuilder: (context, index) {
+                                return Stack(
+                                  children: [
+                                    SizedBox(
+                                        width: 40.w,
+                                        height: 40.h,
+                                        child: Container(
+                                            margin: EdgeInsets.symmetric(
+                                                horizontal: 5.w),
+                                            child: Image.asset(
+                                                "assets/user1.png"))),
+                                    Positioned(
+                                        child: Image.asset("assets/group.png"))
+                                  ],
+                                );
+                              }),
+                        ),
+                      ],
+                    ),
+                  ),
+                  // Right side
+                  SizedBox(
+                    width: 110.w,
+                    child: Column(
+                      children: [
+                        Stack(
+                          clipBehavior: Clip.none,
+                          children: [
+                            Container(
+                                width: 100.w,
                                 height: 75.h,
-                                fit: BoxFit.fill,
-                              )),
-                          Positioned(
-                              bottom: -5.h,
-                              left: 15.w,
-                              right: 15.w,
-                              child: Container(
-                                alignment: Alignment.center,
-                                width: 50.w,
-                                // padding: EdgeInsets.symmetric(
-                                //     horizontal: 5.w, vertical: 5.h),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  //   border: Border.all(width: 0.5.w),
-                                ),
-                                child: Center(
+                                margin: EdgeInsets.symmetric(horizontal: 5.w),
+                                child: Image.asset(
+                                  "${recommandedList[index]['img']}",
+                                  width: 80.w,
+                                  height: 75.h,
+                                  fit: BoxFit.fill,
+                                )),
+                            Positioned(
+                                bottom: -5.h,
+                                left: 15.w,
+                                right: 15.w,
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  width: 50.w,
+                                  // padding: EdgeInsets.symmetric(
+                                  //     horizontal: 5.w, vertical: 5.h),
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    //   border: Border.all(width: 0.5.w),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      "RM Rank",
+                                      style: TextStyle(
+                                        color: Colors.black45,
+                                        fontSize: 10.sp,
+                                      ),
+                                    ),
+                                  ),
+                                ))
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        Container(
+                            width: 70.w,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              border: Border.all(width: 0.5.w),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
                                   child: Text(
-                                    "RM Rank",
+                                    "Now16",
                                     style: TextStyle(
-                                      color: Colors.black45,
+                                      color: Color(0xff2B2B2B),
                                       fontSize: 10.sp,
                                     ),
                                   ),
                                 ),
-                              ))
-                        ],
-                      ),
-                      SizedBox(
-                        height: 10.h,
-                      ),
-                      Container(
-                          width: 70.w,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border.all(width: 0.5.w),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                child: Text(
-                                  "Now16",
-                                  style: TextStyle(
-                                    color: Color(0xff2B2B2B),
-                                    fontSize: 10.sp,
-                                  ),
+                                SizedBox(
+                                  width: 5.w,
                                 ),
-                              ),
-                              SizedBox(
-                                width: 5.w,
-                              ),
-                              Container(
-                                  child: Icon(
-                                    Icons.person,
-                                    size: 15.h,
-                                  ))
-                            ],
-                          ))
-                    ],
-                  ),
-                )
-              ],
-            ));
+                                Container(
+                                    child: Icon(
+                                      Icons.person,
+                                      size: 15.h,
+                                    ))
+                              ],
+                            ))
+                      ],
+                    ),
+                  )
+                ],
+              )),
+        );
       },
     );
   }

@@ -52,16 +52,16 @@ final List<Map<String, dynamic>> groupList = [
 ];
 final profileImage = "assets/profile.png";
 
-class ShowGroupDetails extends StatefulWidget {
-  int g_id = Random().nextInt(groupList.length-1) + 1;
+class SeePostDetails extends StatefulWidget {
+  int g_id = Random().nextInt(groupList.length - 1) + 1;
 
-  ShowGroupDetails( {super.key});
+  SeePostDetails( {super.key});
 
   @override
-  State<ShowGroupDetails> createState() => _ShowGroupDetails();
+  State<SeePostDetails> createState() => _SeePostDetails();
 }
 
-class _ShowGroupDetails extends State<ShowGroupDetails> {
+class _SeePostDetails extends State<SeePostDetails> {
   @override
   Widget build(BuildContext context) {
     final title = groupList[widget.g_id]["name"];
@@ -79,9 +79,9 @@ class _ShowGroupDetails extends State<ShowGroupDetails> {
           children: [
             Container(
               decoration: BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(color: Colors.black.withValues(alpha: 0.2), width: 1.0, style: BorderStyle.solid)
-                )
+                  border: Border(
+                      bottom: BorderSide(color: Colors.black.withValues(alpha: 0.2), width: 1.0, style: BorderStyle.solid)
+                  )
               ),
               padding: EdgeInsets.only(bottom: 9.0),
               height: 60.h,
@@ -143,12 +143,12 @@ class _ShowGroupDetails extends State<ShowGroupDetails> {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                    Expanded(
-                      child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: 6,
-                        itemBuilder: (context, index){
-                          return Container(
+                  Expanded(
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 6,
+                      itemBuilder: (context, index){
+                        return Container(
                             padding: EdgeInsets.all(10.0),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(100.0),
@@ -156,12 +156,12 @@ class _ShowGroupDetails extends State<ShowGroupDetails> {
                             ),
                             clipBehavior: Clip.hardEdge,
                             height: 50.h,
-                              width: 50.h,
-                              child: Image.asset("assets/user4.png", fit: BoxFit.cover,)
-                          );
-                        },
-                      ),
+                            width: 50.h,
+                            child: Image.asset("assets/user4.png", fit: BoxFit.cover,)
+                        );
+                      },
                     ),
+                  ),
                   GestureDetector(
                     child: Container(
                       height: 32.h,
@@ -188,15 +188,15 @@ class _ShowGroupDetails extends State<ShowGroupDetails> {
               ),
             ),
             Container(
-              height: 180.h,
+              height: 80.h,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(12.0),
-                    topRight: Radius.circular(12.0),
-                  ),
-                  border: Border(
-                      top: BorderSide(color: Colors.black.withValues(alpha: 0.1))
-                  ),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(12.0),
+                  topRight: Radius.circular(12.0),
+                ),
+                border: Border(
+                    top: BorderSide(color: Colors.black.withValues(alpha: 0.1))
+                ),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(12.0),
@@ -223,10 +223,10 @@ class _ShowGroupDetails extends State<ShowGroupDetails> {
                                 Expanded(
                                   child: TextField(
                                     decoration: InputDecoration(
-                                      hintText: "Text Writing...!",
-                                      hintStyle: TextStyle(
-                                        color: Colors.grey
-                                      )
+                                        hintText: "Text Writing...!",
+                                        hintStyle: TextStyle(
+                                            color: Colors.grey
+                                        )
                                     ),
                                     style: TextStyle(
                                       color: Colors.black,
@@ -240,9 +240,11 @@ class _ShowGroupDetails extends State<ShowGroupDetails> {
                                   size: 30.0,
                                   color: Colors.black.withValues(alpha: 0.6),
                                 ),
-                                Icon(
-                                  CupertinoIcons.plus_circle,
-                                  size: 30.0,
+                                IconButton(
+                                  onPressed: () {
+
+                                  },
+                                  icon: Icon(CupertinoIcons.plus_circle,),
                                   color: Colors.black.withValues(alpha: 0.6),
                                 )
                               ],
@@ -268,69 +270,6 @@ class _ShowGroupDetails extends State<ShowGroupDetails> {
                         )
                       ],
                     ),
-                    Expanded(
-                      child: Container(
-                        margin: EdgeInsets.only(top: 10.0),
-                        child: Center(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            spacing: 40.0,
-                            children: [
-                              GestureDetector(
-                                onTap: (){},
-                                child: Column(
-                                  spacing: 8.0,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(8.0),
-                                        color: Colors.grey.withValues(alpha: 0.3),
-                                      ),
-                                      padding: EdgeInsets.all(20.0),
-                                      child: Icon(
-                                        Icons.video_camera_back,
-                                        size: 30.0,
-                                        color: Colors.black.withValues(alpha: 0.7),
-                                      ),
-                                    ),
-                                    Text("Live Room", style: TextStyle(
-                                      color: Colors.black.withValues(alpha: 0.4)
-                                    ),)
-                                  ],
-                                ),
-                              ),
-                              GestureDetector(
-                                onTap: (){},
-                                child: Column(
-                                  spacing: 8.0,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(8.0),
-                                        color: Colors.grey.withValues(alpha: 0.3),
-                                      ),
-                                      padding: EdgeInsets.all(20.0),
-                                      child: Icon(
-                                        Icons.mic_none_outlined,
-                                        size: 30.0,
-                                        color: Colors.black.withValues(alpha: 0.7),
-                                      ),
-                                    ),
-                                    Text("Voice Room", style: TextStyle(
-                                        color: Colors.black.withValues(alpha: 0.4)
-                                    ),)
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    )
                   ],
                 ),
               ),

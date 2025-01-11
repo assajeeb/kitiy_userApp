@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:kitti/screens/create_page.dart';
+import 'package:kitti/screens/roomManagement/create_room_page.dart';
 import 'package:kitti/util/colors.dart';
 import 'package:kitti/widgets/custom_button_one.dart';
+
+import 'join_group_tootls.dart';
 
 class  JoinKitiChatRoomUser extends StatefulWidget {
   const JoinKitiChatRoomUser({super.key});
@@ -96,46 +100,52 @@ class _JoinKitiChatRoomUserState extends State<JoinKitiChatRoomUser> {
                          Color(0xff0D111C),
                        ])),
                    child: Row(
+                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                      children: [
-                       Container(
-                         width: 170.w,
-                         height: 55.h,
-                         decoration: BoxDecoration(
-                             color: Color(0xff3D4456),
-                             borderRadius: BorderRadius.circular(10.r)),
-                         child: Row(
-                           mainAxisAlignment: MainAxisAlignment.center,
-                           children: [
-                             Container(
-                               width: 25.w,
-                               height: 25.h,
-                               child: Image.asset("assets/user11.png"),
-                             ),
-                             SizedBox(
-                               width: 10.w,
-                             ),
-                             Column(
-                               mainAxisAlignment: MainAxisAlignment.center,
-                               crossAxisAlignment: CrossAxisAlignment.start,
-                               children: [
-                                 Container(
-                                   child: Text(
-                                     "꧁DOSTI💖TAK꧂",
-                                     style: TextStyle(
-                                         fontSize: 12.sp, color: Colors.white),
+                       InkWell(
+                         onTap:(){
+                           Get.to(JoinGroupTools());
+                 },
+                         child: Container(
+                           width: 170.w,
+                           height: 55.h,
+                           decoration: BoxDecoration(
+                               color: Color(0xff3D4456),
+                               borderRadius: BorderRadius.circular(10.r)),
+                           child: Row(
+                             mainAxisAlignment: MainAxisAlignment.center,
+                             children: [
+                               Container(
+                                 width: 25.w,
+                                 height: 25.h,
+                                 child: Image.asset("assets/user11.png"),
+                               ),
+                               SizedBox(
+                                 width: 10.w,
+                               ),
+                               Column(
+                                 mainAxisAlignment: MainAxisAlignment.center,
+                                 crossAxisAlignment: CrossAxisAlignment.start,
+                                 children: [
+                                   Container(
+                                     child: Text(
+                                       "꧁DOSTI💖TAK꧂",
+                                       style: TextStyle(
+                                           fontSize: 12.sp, color: Colors.white),
+                                     ),
                                    ),
-                                 ),
-                                 Container(
-                                   child: Text(
-                                     "ID: 1215411",
-                                     style: TextStyle(
-                                         fontSize: 12.sp,
-                                         color: Color(0xff9198AA)),
+                                   Container(
+                                     child: Text(
+                                       "ID: 1215411",
+                                       style: TextStyle(
+                                           fontSize: 12.sp,
+                                           color: Color(0xff9198AA)),
+                                     ),
                                    ),
-                                 ),
-                               ],
-                             ),
-                           ],
+                                 ],
+                               ),
+                             ],
+                           ),
                          ),
                        ),
                        Container(
@@ -169,6 +179,52 @@ class _JoinKitiChatRoomUserState extends State<JoinKitiChatRoomUser> {
                                ),
                              ),
                            ],
+                         ),
+                       ),
+                       
+                       InkWell(
+                         onTap:(){
+                           Get.to( CreateRoomPage());
+                         },
+                         child: Container(
+                           width: 80.w,
+                           height: 20.h,
+                           child: ListView(
+                             scrollDirection: Axis.horizontal,
+                             padding: EdgeInsets.symmetric(horizontal: 10.h),
+                             children: [
+                               Padding(
+                                 padding: const EdgeInsets.all(3.0),
+                                 child: Image.asset(
+                                   "assets/icons/dot1.png",
+                                   color: Colors.white,
+                                   width: 7.w,
+                                   height: 7.h,
+
+                                 ),
+                               ),
+                               Padding(
+                                 padding: const EdgeInsets.all(3.0),
+                                 child: Image.asset(
+                                   "assets/icons/dot1.png",
+                                   color: Colors.white,
+                                   width: 9.w,
+                                   height: 9.h,
+
+                                 ),
+                               ),
+                               Padding(
+                                 padding: const EdgeInsets.all(3.0),
+                                 child: Image.asset(
+                                   "assets/icons/dot1.png",
+                                   color: Colors.white,
+                                   width: 7.w,
+                                   height: 7.h,
+
+                                 ),
+                               ),
+                             ],
+                           )
                          ),
                        ),
                        Container(

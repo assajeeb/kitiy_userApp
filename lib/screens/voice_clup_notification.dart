@@ -1,26 +1,33 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:kitti/screens/voice_clup_notification_details.dart';
+import 'package:kitti/widgets/circular_image.dart';
 import 'package:kitti/widgets/custom_text.dart';
 
-class VoiceLupOtification extends StatefulWidget {
-  const VoiceLupOtification({super.key});
+class VoiceClupNotification  extends StatefulWidget {
+  const VoiceClupNotification({super.key});
 
   @override
-  State<VoiceLupOtification> createState() => _VoiceLupOtificationState();
+  State<VoiceClupNotification> createState() => _VoiceClupNotificationState();
 }
 
-class _VoiceLupOtificationState extends State<VoiceLupOtification> {
+class _VoiceClupNotificationState extends State<VoiceClupNotification> {
 
   List<Map<String,dynamic>> notifyList = [
     {
-      "name":"System notification"
+      "name":"System notification",
+      "img":"assets/icons/bell.png"
     },{
-      "name":"Unclaimed Lucky Bags"
+      "name":"Unclaimed Lucky Bags",
+      "img":"assets/icons/bell.png"
     },{
-      "name":"New Friend Request"
+      "name":"New Friend Request",
+      "img":"assets/icons/bell.png"
     },{
-      "name":"Room/Group Invitations"
+      "name":"Room/Group Invitations",
+      "img":"assets/icons/request.png"
     },
   ];
 
@@ -41,8 +48,12 @@ textColor: Colors.black,
           itemBuilder:(context,index){
 
         return ListTile(
-
-          leading: Image.asset("assets/icons/bell.png", width: 15.w,),
+            onTap: (){
+              Get.to(VoiceClupNotificationDetails(title:notifyList[index]['name'] ,));
+            },
+          leading: CircleAvatar(
+            child: Image.asset("assets/icons/request.png"),
+          ),
           title: CustomText(
             title: "${notifyList[index]['name']}",
             fontWeight: FontWeight.w400,

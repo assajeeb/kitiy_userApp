@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:kitti/screens/Inbox_screen.dart';
 import 'package:kitti/screens/create_page.dart';
 import 'package:kitti/screens/homeScreenParts/feed_back.dart';
 import 'package:kitti/screens/homeScreenParts/groupPage.dart';
@@ -80,6 +81,8 @@ class _HomePageExploreState extends State<HomePageExplore> {
         ],
       ),
       body: _newPages[_currentPageIndex],
+
+
       bottomNavigationBar: Container(
         margin: EdgeInsets.all(5.w),
         child: Row(
@@ -102,7 +105,9 @@ class _HomePageExploreState extends State<HomePageExplore> {
                   value: 1,
                   child: Row(
                     children: [
-                      Icon(Icons.star),
+                      Image.asset("assets/icons/creategroup.png",
+                      height: 25.h, width: 25.h,
+                      ),
                       SizedBox(width: 10),
                       Text("Create Group"),
                     ],
@@ -119,7 +124,9 @@ class _HomePageExploreState extends State<HomePageExplore> {
                   value: 2,
                   child: Row(
                     children: [
-                      Icon(Icons.chrome_reader_mode),
+                      Image.asset("assets/icons/feedback.png",
+                        height: 25.h, width: 25.h,
+                      ),
                       SizedBox(width: 10),
                       Text("Feedback"),
                     ],
@@ -129,7 +136,10 @@ class _HomePageExploreState extends State<HomePageExplore> {
                   value: 3,
                   child: Row(
                     children: [
-                      Icon(Icons.chrome_reader_mode),
+                      Image.asset("assets/icons/contactus.png",
+                        color: AppColors.btnColor,
+                        height: 25.h, width: 25.h,
+                      ),
                       SizedBox(width: 10),
                       Text("Contact Us"),
                     ],
@@ -141,6 +151,8 @@ class _HomePageExploreState extends State<HomePageExplore> {
                   Get.to(CreatePage());
                 } else if (value == 2) {
                   print("About selected");
+                }else if (value == 3) {
+                  Get.to(InboxScreen());
                 }
               },
               offset: Offset(0, 100),

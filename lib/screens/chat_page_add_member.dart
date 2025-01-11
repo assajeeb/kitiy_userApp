@@ -9,6 +9,7 @@ class ChatPageAddMember extends StatefulWidget {
   _ChatPageAddMemberState createState() => _ChatPageAddMemberState();
 }
 
+
 class _ChatPageAddMemberState extends State<ChatPageAddMember> {
   // Dummy contact list
   final List<Map<String, dynamic>> contacts = [
@@ -28,6 +29,7 @@ class _ChatPageAddMemberState extends State<ChatPageAddMember> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,

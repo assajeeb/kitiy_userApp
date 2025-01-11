@@ -106,7 +106,7 @@ class _HomeGroupPageListState extends State<HomeGroupPageList> {
             itemBuilder: (BuildContext context, int index) {
               return GestureDetector(
                 onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> ShowGroupDetails(gridItems[index]["id"])));
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> ShowGroupDetails()));
                 },
                 child: Container(
                   width: 90.w,

@@ -21,7 +21,7 @@ class CircularImage extends StatelessWidget {
         color: borderColor ?? Colors.purple,
       ),
       child: Image.asset(
-        "${img??"assets/girl.png" }",
+        "${img??"assets/girl.png"}",
 
         fit: BoxFit.cover,
 
