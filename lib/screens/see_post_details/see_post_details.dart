@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:kitti/screens/chat_screen/chat_screen.dart';
 import 'package:kitti/screens/join_group_space/join_group_space_tp_14.dart';
 
 final List<Map<String, dynamic>> groupList = [
@@ -185,6 +186,7 @@ class _SeePostDetails extends State<SeePostDetails> {
             Expanded(
               child: Container(
                 color: Colors.grey,
+                child: ChatScreen(),
               ),
             ),
             Container(
@@ -280,3 +282,4 @@ class _SeePostDetails extends State<SeePostDetails> {
     );
   }
 }
+

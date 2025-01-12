@@ -79,18 +79,6 @@ class _HomeGroupPageListState extends State<HomeGroupPageList> {
                 ),
                 textAlign: TextAlign.left,
               ),
-              TextButton(
-                  onPressed: (){
-                    Get.to(CreateRoomPage());
-                  },
-                  child: Text(
-                      "Click to see CREATE ROOM page",
-                    style: TextStyle(
-                      fontSize: 12.sp,
-                      color: Colors.blue
-                    ),
-                  )
-              )
             ],
           ),
         ),

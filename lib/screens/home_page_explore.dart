@@ -90,15 +90,6 @@ class _HomePageExploreState extends State<HomePageExplore> {
           children: [
             PopupMenuButton<int>(
               position: PopupMenuPosition.over,
-              child: Container(
-                height: 40.h,
-                width: 40.w,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(50.r),
-                ),
-                child: Icon(Icons.add, size: 25.h, color: Colors.black),
-              ),
               itemBuilder: (context) => [
                 // Popup menu item 1
                 PopupMenuItem(
@@ -157,6 +148,15 @@ class _HomePageExploreState extends State<HomePageExplore> {
               },
               offset: Offset(0, 100),
               elevation: 2,
+              child: Container(
+                height: 40.h,
+                width: 40.w,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(50.r),
+                ),
+                child: Icon(Icons.add, size: 25.h, color: Colors.black),
+              ),
             ),
             Icon(Icons.search, size: 30.h, color: Colors.black),
           ],
