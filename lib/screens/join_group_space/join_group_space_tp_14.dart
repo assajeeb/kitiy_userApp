@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:kitti/screens/group_space_screen.dart';
 
 class JoinGroupSpaceTp14 extends StatelessWidget {
   const JoinGroupSpaceTp14({super.key});
@@ -140,7 +142,9 @@ class JoinGroupSpaceTp14 extends StatelessWidget {
                 Flexible(
                   flex: 1,
                   child: GestureDetector(
-                    onTap: (){},
+                    onTap: (){
+                      Get.to(JoinGroupGroupSpace());
+                    },
                     child: Container(
                       decoration: BoxDecoration(
                         color: Colors.black,

@@ -7,6 +7,8 @@ import 'package:get/get.dart';
 import 'package:kitti/screens/chat_screen/chat_screen.dart';
 import 'package:kitti/screens/join_group_space/join_group_space_tp_14.dart';
 
+import '../search_group_page.dart';
+
 final List<Map<String, dynamic>> groupList = [
   {
     "id": 12345,
@@ -244,7 +246,7 @@ class _SeePostDetails extends State<SeePostDetails> {
                                 ),
                                 IconButton(
                                   onPressed: () {
-
+                                    Get.to(SearchGroupPage());
                                   },
                                   icon: Icon(CupertinoIcons.plus_circle,),
                                   color: Colors.black.withValues(alpha: 0.6),

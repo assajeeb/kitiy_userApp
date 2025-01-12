@@ -174,7 +174,7 @@ class _SearchRoomPageState extends State<SearchRoomPage> {
 
                           child: InkWell(
                             onTap: (){
-                              Get.to(GroupCallScreen());
+                           //   Get.to(GroupCallScreen());
                             },
                             child: Container(
                                 width: 50.w,

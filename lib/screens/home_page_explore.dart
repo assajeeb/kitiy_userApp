@@ -8,8 +8,12 @@ import 'package:kitti/screens/create_page.dart';
 import 'package:kitti/screens/homeScreenParts/feed_back.dart';
 import 'package:kitti/screens/homeScreenParts/groupPage.dart';
 import 'package:kitti/screens/homeScreenParts/home.dart';
+import 'package:kitti/screens/join_kiti_chat_room_user2.dart';
 import 'package:kitti/screens/mainFeedBack/mainFeedBackPage.dart';
+import 'package:kitti/screens/search_group_page.dart';
 import 'package:kitti/util/colors.dart';
+
+import 'join_kitti_chat_room_user.dart';
 
 class HomePageExplore extends StatefulWidget {
   const HomePageExplore({super.key});
@@ -43,9 +47,14 @@ class _HomePageExploreState extends State<HomePageExplore> {
           backgroundColor: AppColors.whiteColor,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Image.asset("assets/icons/profile.png"),
+        leading: InkWell(
+          onTap: (){
+            Get.to(JoinKitiChatRoomUser2());
+          },
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Image.asset("assets/icons/profile.png"),
+          ),
         ),
         centerTitle: false,
         actions: [
@@ -158,7 +167,11 @@ class _HomePageExploreState extends State<HomePageExplore> {
                 child: Icon(Icons.add, size: 25.h, color: Colors.black),
               ),
             ),
-            Icon(Icons.search, size: 30.h, color: Colors.black),
+            InkWell(
+                onTap: (){
+                  Get.to(SearchGroupPage());
+                },
+                child: Icon(Icons.search, size: 30.h, color: Colors.black)),
           ],
         ),
       ),

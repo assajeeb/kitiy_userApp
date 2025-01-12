@@ -164,7 +164,7 @@ class _GroupScreenState extends State<GroupScreen> {
                         ),
                         InkWell(
                           onTap: (){
-                            Get.to(GroupCallScreen());
+                            //Get.to(GroupCallScreen());
                           },
                           child: Container(
                               width: 80.w,
