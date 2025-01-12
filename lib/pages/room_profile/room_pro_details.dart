@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:kitiy_userapp/pages/room_profile/profile_edit.dart';
 
 class RoomProDetails extends StatefulWidget {
   const RoomProDetails({super.key});
@@ -10,6 +11,9 @@ class RoomProDetails extends StatefulWidget {
 }
 
 class _RoomProDetailsState extends State<RoomProDetails> {
+
+  bool isShow= false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,10 +46,27 @@ class _RoomProDetailsState extends State<RoomProDetails> {
                             icon: Icon(Icons.arrow_back_ios,color: Colors.white,size: 25.r,)),
                         Text("Adhora",style: TextStyle(fontSize: 25.sp, fontWeight: FontWeight.w500,color: Colors.white),),
                       Spacer(),
-                        Padding(
-                          padding:  EdgeInsets.only(right: 15.w),
-                          child: Image.asset("images/icons/edit.png",width: 25.w,height: 25.w,),
-                        )
+
+                        // unwanted part just to show public view off profile
+                        GestureDetector(
+                            onTap: (){
+                              setState(() {
+                                isShow=!isShow;
+                              });
+                            },
+
+                            child: isShow?Icon(Icons.visibility_outlined,color: Colors.white,):Icon(Icons.visibility_off_outlined,color: Colors.white,)),
+                        SizedBox(width: 20.w,),
+
+                        isShow?GestureDetector(
+                          onTap: (){
+                            Get.to(()=>ProfileEdit());
+                          },
+                          child: Padding(
+                            padding:  EdgeInsets.only(right: 15.w),
+                            child: Image.asset("images/icons/edit.png",width: 25.w,height: 25.w,),
+                          ),
+                        ):SizedBox()
                       ,SizedBox(width: 10.w,)
                       ],
                     ),
@@ -77,11 +98,12 @@ class _RoomProDetailsState extends State<RoomProDetails> {
         
                        ],
                      ),
-                        SizedBox(height: 25.sp,),
+                        SizedBox(height: 15.sp,),
                         Text("Bangladesh  |  Bangladesh",
                           style: TextStyle(fontSize: 15.sp,fontWeight: FontWeight.w400,color: Colors.white),),
-                        SizedBox(height: 17.sp,),
-                        Row(
+                        SizedBox(height: 27.sp,),
+
+                       isShow? Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
@@ -122,7 +144,7 @@ class _RoomProDetailsState extends State<RoomProDetails> {
                                                     ),
                             SizedBox(width: 14.w,)
                           ],
-                        )
+                        ):SizedBox(),
         
                       ],
                     ),
@@ -175,7 +197,7 @@ class _RoomProDetailsState extends State<RoomProDetails> {
             ),
         
             SizedBox(height: 10.h,),
-            Padding(
+           isShow? Padding(
               padding: EdgeInsets.symmetric(horizontal: 15.w,vertical: 5.h),
               child: Row(
                 children: [
@@ -184,8 +206,8 @@ class _RoomProDetailsState extends State<RoomProDetails> {
                   Text("8",style: TextStyle(fontSize: 14.sp,fontWeight: FontWeight.w400,color: Color(0xff2B2B2B)),),
                 ],
               ),
-            ),
-            Row(
+            ):SizedBox(),
+            isShow?Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 SizedBox(width: 20.w,),
@@ -196,10 +218,10 @@ class _RoomProDetailsState extends State<RoomProDetails> {
                 Image.asset("images/icons/bdgg9.png",width: 60.06.w,height: 60.06.h,),
         
               ],
-            ),
+            ):SizedBox(),
         
             SizedBox(height: 10.h,),
-            Padding(
+            isShow?Padding(
               padding: EdgeInsets.symmetric(horizontal: 15.w,vertical: 5.h),
               child: Row(
                 children: [
@@ -208,8 +230,8 @@ class _RoomProDetailsState extends State<RoomProDetails> {
                   Text("9",style: TextStyle(fontSize: 14.sp,fontWeight: FontWeight.w400,color: Color(0xff2B2B2B)),),
                 ],
               ),
-            ),
-            Row(
+            ):SizedBox(),
+            isShow?Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 SizedBox(width: 20.w,),
@@ -218,9 +240,9 @@ class _RoomProDetailsState extends State<RoomProDetails> {
                 Image.asset("images/icons/bdgg11.png",width: 50.w,height: 50.h,),
         
               ],
-            ),
+            ):SizedBox(),
             SizedBox(height: 10.h,),
-            Padding(
+           Padding(
               padding: EdgeInsets.symmetric(horizontal: 15.w,vertical: 10.h),
               child: Row(
                 children: [
@@ -392,35 +414,222 @@ class _RoomProDetailsState extends State<RoomProDetails> {
                     ],
                   ),
                 ),
-                Container(
-                  width: 90.w,
-                  height: 106.h,
-                  decoration: BoxDecoration(
-                      color: Color(0xffF5F5F5),
-                      borderRadius: BorderRadius.circular(5.r)
-                  ),
-                  child: Column(
-                    children: [
-                      Text("Friend",style: TextStyle(fontSize: 14.sp,fontWeight: FontWeight.w400,color: Color(0xff2B2B2B)),),
-        
-                      SizedBox(height: 15.h,),
+                GestureDetector(
+                  onTap: (){
+                    Get.bottomSheet(
+                      
                       Container(
-                        padding: EdgeInsets.all(3.r),
                         decoration: BoxDecoration(
-        
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              color: Color(0xff0B5F84),
-        
-                            )
-        
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(25.r),  // Adjust the radius value as needed
+                              topRight: Radius.circular(25.r),
+                            ),
+                          image: DecorationImage(
+                              image: AssetImage("images/image/bgg.png",),fit: BoxFit.cover)
                         ),
-                        child: Center(child: Padding(
-                          padding:  EdgeInsets.all(10.r),
-                          child: Image.asset("images/icons/plus.png",width: 25.w,height: 25.w,)
-                        )),
-                      )
-                    ],
+                        child: Padding(
+                          padding:  EdgeInsets.symmetric(horizontal: 15.w,vertical: 15.w),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Paired Friend Letter",style: TextStyle(
+                                fontSize: 18.sp, fontWeight: FontWeight.w400,color: Color(0xff65A9C8)
+                              ),),
+                              SizedBox(height: 10.h,),
+                              Text("To form Paired Friend Relationship, you must have at least 10000 intimacy points",style: TextStyle(
+                                  fontSize: 15.sp, fontWeight: FontWeight.w400,color: Color(0xff65A9C8)
+                              ),),
+
+                              SizedBox(height: 20.h,),
+                              Center(
+                                child: Container(
+                                  height: 285.h,
+                                  width: 316.w,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(image: AssetImage("images/image/heart.png"))
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        children: [
+                                          CircleAvatar(
+                                            radius: 30.r,
+                                            backgroundColor: Color(0xff0B5F84),
+                                            child: CircleAvatar(
+                                              radius: 27.r,
+                                              backgroundImage: AssetImage("images/image/smp.png"),
+                                            ),
+                                          ),
+                                          Image.asset("images/image/handshake.png",width: 30.w,height: 30.w,),
+                                          CircleAvatar(
+                                            radius: 30.r,
+                                            backgroundColor: Color(0xff0B5F84),
+                                            child: CircleAvatar(
+                                              radius: 27.r,
+                                              backgroundImage: AssetImage("images/image/smp.png"),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(height: 10.h,),
+                                      Text("Dear \“Habib\"",
+                                        style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w400,color: Color(0xff0B5F84)),)
+                                      ,SizedBox(height: 5.h,),
+                                      Text("Would you like to be my\n paired friend ?", textAlign: TextAlign.center,
+                                        style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w400,color: Color(0xff0B5F84)),)
+
+
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: 30.h,),
+                              SizedBox(
+                                width: double.infinity,
+                                height: 48.h,
+                                child: ElevatedButton(
+                                  onPressed: () {
+
+                                  },
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+
+                                      SizedBox(width: 5.w,),
+                                      Text(
+                                        "Send ( ",
+                                        style: TextStyle(color: Colors.white, fontSize: 18.sp, fontWeight: FontWeight.w400),
+                                      ),
+                                      Image.asset("images/icons/dd.png",width: 25.w,height: 25.w,),
+                                      Text(
+                                        " 10)",
+                                        style: TextStyle(color: Colors.white, fontSize: 18.sp, fontWeight: FontWeight.w400),
+                                      ),
+
+
+                                    ],
+                                  ),
+                                  style: ButtonStyle(
+                                    shape:  WidgetStatePropertyAll(RoundedRectangleBorder(
+                                      side: BorderSide(color: Color(0xff0B5F84)),
+                                      borderRadius: BorderRadius.circular(10.r),
+                                    ),),
+                                    backgroundColor: WidgetStatePropertyAll((Color(0xff0B5F84)),
+                                    ),
+                                  ),
+                                ),
+                              ),
+
+
+                            ],
+                          ),
+                        ),
+
+                        
+                        
+                      ),
+                    );
+
+                  },
+                  child: Container(
+                    width: 90.w,
+                    height: 106.h,
+                    decoration: BoxDecoration(
+                        color: Color(0xffF5F5F5),
+                        borderRadius: BorderRadius.circular(5.r)
+                    ),
+                    child: Column(
+                      children: [
+                        Text("Friend",style: TextStyle(fontSize: 14.sp,fontWeight: FontWeight.w400,color: Color(0xff2B2B2B)),),
+
+                        SizedBox(height: 15.h,),
+                        Container(
+                          padding: EdgeInsets.all(3.r),
+                          decoration: BoxDecoration(
+
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: Color(0xff0B5F84),
+
+                              )
+
+                          ),
+                          child: Center(child: Padding(
+                            padding:  EdgeInsets.all(10.r),
+                            child: Image.asset("images/icons/plus.png",width: 25.w,height: 25.w,)
+                          )),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+
+
+
+            SizedBox(height: 15.w,),
+            isShow?SizedBox():Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SizedBox(
+                  width: 185.w,
+                  child: ElevatedButton(
+                    onPressed: () {
+
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.person_add_alt_1,color: Color(0xff0B5F84),size: 15.r,),
+                        SizedBox(width: 5.w,),
+                        Text(
+                          "Add Friend",
+                          style: TextStyle(color: Color(0xff0B5F84), fontSize: 14.sp, fontWeight: FontWeight.w400),
+                        ),
+                      ],
+                    ),
+                    style: ButtonStyle(
+                      shape:  WidgetStatePropertyAll(RoundedRectangleBorder(
+                        side: BorderSide(color: Color(0xff0B5F84)),
+                        borderRadius: BorderRadius.circular(25.r),
+                      ),),
+                      backgroundColor: WidgetStatePropertyAll((Colors.white),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 185.w,
+                  child: ElevatedButton(
+                    onPressed: () {
+
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.add,color: Colors.white,size: 15.r,),
+
+                        SizedBox(width: 5.w,),
+                        Text(
+                          "Follow",
+                          style: TextStyle(color: Colors.white, fontSize: 14.sp, fontWeight: FontWeight.w400),
+                        ),
+                      ],
+                    ),
+                    style: ButtonStyle(
+                      shape:  WidgetStatePropertyAll(RoundedRectangleBorder(
+                        side: BorderSide(color: Color(0xff0B5F84)),
+                        borderRadius: BorderRadius.circular(25.r),
+                      ),),
+                      backgroundColor: WidgetStatePropertyAll((Color(0xff0B5F84)),
+                      ),
+                    ),
                   ),
                 ),
               ],
