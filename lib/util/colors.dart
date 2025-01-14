@@ -13,6 +13,8 @@ class AppColors {
   static const Color lightBlue = Color(0xffE9F2F5);
   static const Color blueColor = Color(0xff009EFC);
   static const Color goldColor = Color(0xffE1BD4B);
+  static const Color orengeColor = Color(0xffF49000);
+
 
 
 

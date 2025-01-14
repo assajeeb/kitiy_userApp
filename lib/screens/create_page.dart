@@ -113,11 +113,13 @@ Get.to(CreateGroupFinish());
 class CustomButton extends StatelessWidget {
   final title;
   final width;
+  final height;
   final img;
   VoidCallback onTab;
   CustomButton({
     this.title,
     this.width,
+    this.height,
     this.img,
     required this.onTab,
   });
@@ -128,7 +130,7 @@ class CustomButton extends StatelessWidget {
       onTap: onTab,
       child: Container(
         width: width ?? 100.w,
-        height: 35.h,
+        height: height?? 35.h,
         decoration: BoxDecoration(
           color: Colors.grey[100],
           border: Border.all(width: 0.5, color: Colors.black12),
