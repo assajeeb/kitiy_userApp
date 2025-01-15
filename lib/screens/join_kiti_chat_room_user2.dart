@@ -8,6 +8,7 @@ import 'package:kitti/widgets/circular_image.dart';
 import 'package:kitti/widgets/custom_button_one.dart';
 
 import '../widgets/custom_text.dart';
+import 'chat_screen/pk_our_f.dart';
 import 'join_group_tootls.dart';
 
 class JoinKitiChatRoomUser2 extends StatefulWidget {
@@ -79,329 +80,233 @@ class _JoinKitiChatRoomUser2State extends State<JoinKitiChatRoomUser2> {
     userList.shuffle();
     return SafeArea(
       child: Scaffold(
-          body: SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage("assets/bg.png"),
-                            fit: BoxFit.fill)),
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          height: 10.h,
-                        ),
-                        Container(
-                          width: 390.w,
-                          decoration: BoxDecoration(
-                              gradient: LinearGradient(colors: [
-                            Color(0xff041E43),
-                            Color(0xff0D111C),
-                          ])),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              InkWell(
-                                onTap: () {
-                                  Get.to(JoinGroupTools());
-                                },
-                                child: Container(
-                                  width: 170.w,
-                                  height: 55.h,
-                                  decoration: BoxDecoration(
-                                      color: Color(0xff3D4456),
-                                      borderRadius:
-                                          BorderRadius.circular(10.r)),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        width: 25.w,
-                                        height: 25.h,
-                                        child: Image.asset("assets/user11.png"),
-                                      ),
-                                      SizedBox(
-                                        width: 10.w,
-                                      ),
-                                      Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Container(
-                                            child: Text(
-                                              "꧁DOSTI💖TAK꧂",
-                                              style: TextStyle(
-                                                  fontSize: 12.sp,
-                                                  color: Colors.white),
-                                            ),
-                                          ),
-                                          Container(
-                                            child: Text(
-                                              "ID: 1215411",
-                                              style: TextStyle(
-                                                  fontSize: 12.sp,
-                                                  color: Color(0xff9198AA)),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                width: 68.w,
-                                height: 20.h,
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage("assets/bg.png"),
+                          fit: BoxFit.fill)),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 10.h,
+                      ),
+                      Container(
+                        width: 390.w,
+                        decoration: BoxDecoration(
+                            gradient: LinearGradient(colors: [
+                          Color(0xff041E43),
+                          Color(0xff0D111C),
+                        ])),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                Get.to(JoinGroupTools());
+                              },
+                              child: Container(
+                                width: 170.w,
+                                height: 55.h,
                                 decoration: BoxDecoration(
                                     color: Color(0xff3D4456),
-                                    borderRadius: BorderRadius.circular(16.r)),
+                                    borderRadius: BorderRadius.circular(10.r)),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Container(
-                                      width: 15.w,
-                                      height: 15.h,
-                                      child: Image.asset(
-                                        "assets/icons/user_icon.png",
-                                        color: Colors.white,
-                                      ),
+                                      width: 25.w,
+                                      height: 25.h,
+                                      child: Image.asset("assets/user11.png"),
                                     ),
                                     SizedBox(
-                                      width: 5.w,
+                                      width: 10.w,
                                     ),
-                                    Container(
-                                      child: Text(
-                                        "25",
-                                        style: TextStyle(
-                                          fontSize: 12.sp,
-                                          fontWeight: FontWeight.w400,
-                                          color: Colors.white,
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Container(
+                                          child: Text(
+                                            "꧁DOSTI💖TAK꧂",
+                                            style: TextStyle(
+                                                fontSize: 12.sp,
+                                                color: Colors.white),
+                                          ),
                                         ),
-                                      ),
+                                        Container(
+                                          child: Text(
+                                            "ID: 1215411",
+                                            style: TextStyle(
+                                                fontSize: 12.sp,
+                                                color: Color(0xff9198AA)),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ],
                                 ),
                               ),
-                              InkWell(
-                                onTap: () {
-                                  Get.to(CreateRoomPage());
-                                },
-                                child: Container(
-                                    width: 80.w,
-                                    height: 20.h,
-                                    child: ListView(
-                                      scrollDirection: Axis.horizontal,
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: 10.h),
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.all(3.0),
-                                          child: Image.asset(
-                                            "assets/icons/dot1.png",
-                                            color: Colors.white,
-                                            width: 7.w,
-                                            height: 7.h,
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(3.0),
-                                          child: Image.asset(
-                                            "assets/icons/dot1.png",
-                                            color: Colors.white,
-                                            width: 9.w,
-                                            height: 9.h,
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(3.0),
-                                          child: Image.asset(
-                                            "assets/icons/dot1.png",
-                                            color: Colors.white,
-                                            width: 7.w,
-                                            height: 7.h,
-                                          ),
-                                        ),
-                                      ],
-                                    )),
-                              ),
-                              Container(
-                                width: 20.w,
-                                height: 20.h,
-                                child: Image.asset(
-                                  "assets/icons/poweroff.png",
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: Container(
-                              margin: EdgeInsets.only(left: 10.w),
-                              width: 169.w,
+                            ),
+                            Container(
+                              width: 68.w,
+                              height: 20.h,
                               decoration: BoxDecoration(
-                                  gradient: LinearGradient(colors: [
-                                Color(0xff041E43),
-                                Color(0xff0D111C),
-                              ])),
+                                  color: Color(0xff3D4456),
+                                  borderRadius: BorderRadius.circular(16.r)),
                               child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Container(
-                                    width: 68.w,
-                                    height: 20.h,
-                                    decoration: BoxDecoration(
-                                        color: Color(0xff3D4456),
-                                        borderRadius:
-                                            BorderRadius.circular(16.r)),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Container(
-                                          width: 15.w,
-                                          height: 15.h,
-                                          child: Image.asset(
-                                              "assets/icons/dimond.png"),
-                                        ),
-                                        SizedBox(
-                                          width: 5.w,
-                                        ),
-                                        Container(
-                                          child: Text(
-                                            "451",
-                                            style: TextStyle(
-                                                fontSize: 12.sp,
-                                                color: Color(0xff9198AA)),
-                                          ),
-                                        ),
-                                      ],
+                                    width: 15.w,
+                                    height: 15.h,
+                                    child: Image.asset(
+                                      "assets/icons/user_icon.png",
+                                      color: Colors.white,
                                     ),
                                   ),
+                                  SizedBox(
+                                    width: 5.w,
+                                  ),
                                   Container(
-                                    width: 94.w,
-                                    height: 20.h,
-                                    decoration: BoxDecoration(
-                                        color: Color(0xff3D4456),
-                                        borderRadius:
-                                            BorderRadius.circular(16.r)),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Container(
-                                          width: 15.w,
-                                          height: 15.h,
-                                          child: Image.asset(
-                                              "assets/icons/record.png"),
-                                        ),
-                                        SizedBox(
-                                          width: 5.w,
-                                        ),
-                                        Container(
-                                          child: Text(
-                                            "451",
-                                            style: TextStyle(
-                                                fontSize: 12.sp,
-                                                color: Color(0xff9198AA)),
-                                          ),
-                                        ),
-                                      ],
+                                    child: Text(
+                                      "25",
+                                      style: TextStyle(
+                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.white,
+                                      ),
                                     ),
                                   ),
                                 ],
-                              )),
+                              ),
+                            ),
+                            InkWell(
+                              onTap: () {
+                                Get.to(CreateRoomPage());
+                              },
+                              child: Container(
+                                  width: 80.w,
+                                  height: 20.h,
+                                  child: ListView(
+                                    scrollDirection: Axis.horizontal,
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 10.h),
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.all(3.0),
+                                        child: Image.asset(
+                                          "assets/icons/dot1.png",
+                                          color: Colors.white,
+                                          width: 7.w,
+                                          height: 7.h,
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.all(3.0),
+                                        child: Image.asset(
+                                          "assets/icons/dot1.png",
+                                          color: Colors.white,
+                                          width: 9.w,
+                                          height: 9.h,
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.all(3.0),
+                                        child: Image.asset(
+                                          "assets/icons/dot1.png",
+                                          color: Colors.white,
+                                          width: 7.w,
+                                          height: 7.h,
+                                        ),
+                                      ),
+                                    ],
+                                  )),
+                            ),
+                            Container(
+                              width: 20.w,
+                              height: 20.h,
+                              child: Image.asset(
+                                "assets/icons/poweroff.png",
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
                         ),
-                        SizedBox(
-                          height: 10.h,
-                        ),
-                        Container(
-                            width: double.infinity.w,
-                            padding: EdgeInsets.only(right: 15.w),
-                            decoration: BoxDecoration(),
+                      ),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Container(
+                            margin: EdgeInsets.only(left: 10.w),
+                            width: 169.w,
+                            decoration: BoxDecoration(
+                                gradient: LinearGradient(colors: [
+                              Color(0xff041E43),
+                              Color(0xff0D111C),
+                            ])),
                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Container(
-                                  width: 40.w,
-                                  height: 39.h,
-                                  padding: EdgeInsets.all(5.w),
+                                  width: 68.w,
+                                  height: 20.h,
                                   decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(30.r),
-                                          bottomLeft: Radius.circular(30.r)),
-                                      gradient: LinearGradient(colors: [
-                                        Color(0xffEE7F14),
-                                        Color(0xffFBA106)
-                                      ])),
-                                  child: Image.asset(
-                                    "assets/u1.png",
-                                    width: 28.w,
-                                    height: 28.h,
-                                    fit: BoxFit.contain,
+                                      color: Color(0xff3D4456),
+                                      borderRadius:
+                                          BorderRadius.circular(16.r)),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        width: 15.w,
+                                        height: 15.h,
+                                        child: Image.asset(
+                                            "assets/icons/dimond.png"),
+                                      ),
+                                      SizedBox(
+                                        width: 5.w,
+                                      ),
+                                      Container(
+                                        child: Text(
+                                          "451",
+                                          style: TextStyle(
+                                              fontSize: 12.sp,
+                                              color: Color(0xff9198AA)),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                                 Container(
-                                  width: 148.w,
-                                  height: 39.h,
-                                  padding: EdgeInsets.all(5.w),
+                                  width: 94.w,
+                                  height: 20.h,
                                   decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.only(
-                                          topRight: Radius.circular(30.r),
-                                          bottomRight: Radius.circular(30.r)),
-                                      gradient: LinearGradient(colors: [
-                                        Color(0xff71391D),
-                                        Color(0xff8E623A),
-                                        Color(0xff745A42),
-                                        Color(0xff5D524C)
-                                      ])),
+                                      color: Color(0xff3D4456),
+                                      borderRadius:
+                                          BorderRadius.circular(16.r)),
                                   child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Image.asset(
-                                        "assets/car.png",
-                                        width: 35.w,
-                                        height: 35.h,
-                                        fit: BoxFit.cover,
+                                      Container(
+                                        width: 15.w,
+                                        height: 15.h,
+                                        child: Image.asset(
+                                            "assets/icons/record.png"),
+                                      ),
+                                      SizedBox(
+                                        width: 5.w,
                                       ),
                                       Container(
                                         child: Text(
-                                          "X",
+                                          "451",
                                           style: TextStyle(
-                                              fontSize: 14.sp,
-                                              fontWeight: FontWeight.w500,
-                                              color: Colors.white),
-                                        ),
-                                      ),
-                                      Container(
-                                        child: Text(
-                                          "10",
-                                          style: TextStyle(
-                                              fontSize: 14.sp,
-                                              fontWeight: FontWeight.w500,
-                                              color: Colors.white),
-                                        ),
-                                      ),
-                                      Image.asset(
-                                        "assets/u1.png",
-                                        width: 25.w,
-                                        height: 25.h,
-                                        fit: BoxFit.cover,
-                                      ),
-                                      Container(
-                                        child: Text(
-                                          "60s",
-                                          style: TextStyle(
-                                              fontSize: 14.sp,
-                                              fontWeight: FontWeight.w500,
-                                              color: Colors.white),
+                                              fontSize: 12.sp,
+                                              color: Color(0xff9198AA)),
                                         ),
                                       ),
                                     ],
@@ -409,169 +314,260 @@ class _JoinKitiChatRoomUser2State extends State<JoinKitiChatRoomUser2> {
                                 ),
                               ],
                             )),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Container(
-                              height: 50.w,
-                              width: 170.w,
-                              alignment: Alignment.centerRight,
-                              child: ListView.builder(
-                                  itemCount: userList.length,
-                                  scrollDirection: Axis.horizontal,
-                                  itemBuilder: (context, index) {
-                                    return ClipRRect(
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(2.0),
-                                        child: Image.asset(
-                                          "${userList[index]['img']}",
-                                          height: 30.h,
-                                          width: 30.w,
-                                        ),
-                                      ),
-                                    );
-                                  }),
-                            ),
-                          ],
-                        ),
-                      ],
-                    )),
-                Stack(
-                  children: [
-                    Container(
-                      height: 277.h,
-                      color: Colors.black45,
-                      child: Image.asset(
-                        "assets/bg3.png",
-                        height: 150.h,
-                        width: 420.w,
-                        fit: BoxFit.fill,
                       ),
-                    ),
-                    Positioned(
-                      left: 5.w,
-                      right: 5.w,
-                      top: 20.h,
-                      child: GridView.builder(
-                          gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: 4),
-                          itemCount: groupUserList.length,
-                          physics: BouncingScrollPhysics(),
-                          shrinkWrap: true,
-                          itemBuilder: (context, index) {
-                            return Container(
-                                height: 70.h,
-                                child: Column(
+                      SizedBox(
+                        height: 10.h,
+                      ),
+                      Container(
+                          width: double.infinity.w,
+                          padding: EdgeInsets.only(right: 15.w),
+                          decoration: BoxDecoration(),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Container(
+                                width: 40.w,
+                                height: 39.h,
+                                padding: EdgeInsets.all(5.w),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(30.r),
+                                        bottomLeft: Radius.circular(30.r)),
+                                    gradient: LinearGradient(colors: [
+                                      Color(0xffEE7F14),
+                                      Color(0xffFBA106)
+                                    ])),
+                                child: Image.asset(
+                                  "assets/u1.png",
+                                  width: 28.w,
+                                  height: 28.h,
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                              Container(
+                                width: 148.w,
+                                height: 39.h,
+                                padding: EdgeInsets.all(5.w),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                        topRight: Radius.circular(30.r),
+                                        bottomRight: Radius.circular(30.r)),
+                                    gradient: LinearGradient(colors: [
+                                      Color(0xff71391D),
+                                      Color(0xff8E623A),
+                                      Color(0xff745A42),
+                                      Color(0xff5D524C)
+                                    ])),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Container(
-                                      child: Image.asset(
-                                        "${groupUserList[index]['img']}",
-                                        height: 50.h,
-                                        width: 50.w,
-                                        fit: BoxFit.cover,
-                                      ),
+                                    Image.asset(
+                                      "assets/car.png",
+                                      width: 35.w,
+                                      height: 35.h,
+                                      fit: BoxFit.cover,
                                     ),
                                     Container(
-                                      width: 40.w,
                                       child: Text(
-                                        "2",
+                                        "X",
                                         style: TextStyle(
                                             fontSize: 14.sp,
                                             fontWeight: FontWeight.w500,
                                             color: Colors.white),
-                                        textAlign: TextAlign.center,
+                                      ),
+                                    ),
+                                    Container(
+                                      child: Text(
+                                        "10",
+                                        style: TextStyle(
+                                            fontSize: 14.sp,
+                                            fontWeight: FontWeight.w500,
+                                            color: Colors.white),
+                                      ),
+                                    ),
+                                    Image.asset(
+                                      "assets/u1.png",
+                                      width: 25.w,
+                                      height: 25.h,
+                                      fit: BoxFit.cover,
+                                    ),
+                                    Container(
+                                      child: Text(
+                                        "60s",
+                                        style: TextStyle(
+                                            fontSize: 14.sp,
+                                            fontWeight: FontWeight.w500,
+                                            color: Colors.white),
                                       ),
                                     ),
                                   ],
-                                ));
-                          }),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 10.h,
-                ),
-                Container(
-                  margin: EdgeInsets.only(left: 15.w),
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Waiting List",
-                    style: TextStyle(
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.black),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                Container(
-                  height: 200.h,
-                  alignment: Alignment.centerLeft,
-                  child: ListView.builder(
-                      itemCount: wishList.length,
-                      itemBuilder: (context, index) {
-                        return ClipRRect(
-                          child: ListTile(
-                            leading: Image.asset(
-                              "${wishList[index]['img']}",
-                              height: 30.h,
-                              width: 30.w,
-                            ),
-                            title: Text(
-                              "${wishList[index]['name']}",
-                            ),
+                                ),
+                              ),
+                            ],
+                          )),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Container(
+                            height: 50.w,
+                            width: 170.w,
+                            alignment: Alignment.centerRight,
+                            child: ListView.builder(
+                                itemCount: userList.length,
+                                scrollDirection: Axis.horizontal,
+                                itemBuilder: (context, index) {
+                                  return ClipRRect(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(2.0),
+                                      child: Image.asset(
+                                        "${userList[index]['img']}",
+                                        height: 30.h,
+                                        width: 30.w,
+                                      ),
+                                    ),
+                                  );
+                                }),
                           ),
-                        );
-                      }),
-                ),
-              ],
-            ),
-          ),
-          bottomNavigationBar: Container(
-            margin: EdgeInsets.only(left: 5.w, right: 5.w, bottom: 10.h),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Image.asset("assets/icons/message.png"),
-                Image.asset("assets/icons/smile.png"),
-                Image.asset(
-                  "assets/navicon/messenger.png",
-                  width: 25.w,
-                  height: 25.h,
-                ),
-                Image.asset(
-                  "assets/icons/record.png",
-                  width: 25.w,
-                  height: 25.h,
-                ),
-                GestureDetector(
-                    onTap: () {
-                      showPackage(context);
-                    },
+                        ],
+                      ),
+                    ],
+                  )),
+              Stack(
+                children: [
+                  Container(
+                    height: 277.h,
+                    color: Colors.black45,
                     child: Image.asset(
-                      "assets/navicon/mic.png",
-                      width: 25.w,
-                      height: 25.h,
-                    )),
-                Image.asset(
-                  "assets/navicon/volume.png",
-                  width: 25.w,
-                  height: 25.h,
+                      "assets/bg3.png",
+                      height: 150.h,
+                      width: 420.w,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Positioned(
+                    left: 5.w,
+                    right: 5.w,
+                    top: 20.h,
+                    child: GridView.builder(
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 4),
+                        itemCount: groupUserList.length,
+                        physics: BouncingScrollPhysics(),
+                        shrinkWrap: true,
+                        itemBuilder: (context, index) {
+                          return Container(
+                              height: 70.h,
+                              child: Column(
+                                children: [
+                                  Container(
+                                    child: Image.asset(
+                                      "${groupUserList[index]['img']}",
+                                      height: 50.h,
+                                      width: 50.w,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 40.w,
+                                    child: Text(
+                                      "2",
+                                      style: TextStyle(
+                                          fontSize: 14.sp,
+                                          fontWeight: FontWeight.w500,
+                                          color: Colors.white),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ),
+                                ],
+                              ));
+                        }),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 15.w),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Waiting List",
+                  style: TextStyle(
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black),
+                  textAlign: TextAlign.center,
                 ),
-                InkWell(
-                    onTap: () {
-                      showPackage(context);
-                    },
-                    child: Image.asset(
-                      "assets/navicon/package.png",
-                      width: 25.w,
-                      height: 25.h,
-                    )),
-              ],
-            ),
+              ),
+              Container(
+                height: 200.h,
+                alignment: Alignment.centerLeft,
+                child: ListView.builder(
+                    itemCount: wishList.length,
+                    itemBuilder: (context, index) {
+                      return ClipRRect(
+                        child: ListTile(
+                          leading: Image.asset(
+                            "${wishList[index]['img']}",
+                            height: 30.h,
+                            width: 30.w,
+                          ),
+                          title: Text(
+                            "${wishList[index]['name']}",
+                          ),
+                        ),
+                      );
+                    }),
+              ),
+            ],
           ),
-        floatingActionButton: Container(
+        ),
+        bottomNavigationBar: Container(
+          margin: EdgeInsets.only(left: 5.w, right: 5.w, bottom: 10.h),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Image.asset("assets/icons/message.png"),
+              Image.asset("assets/icons/smile.png"),
+              Image.asset(
+                "assets/navicon/messenger.png",
+                width: 25.w,
+                height: 25.h,
+              ),
+              Image.asset(
+                "assets/icons/record.png",
+                width: 25.w,
+                height: 25.h,
+              ),
+              GestureDetector(
+                  onTap: () {
+                  // PkMode.pkOurF(context);
 
+                  },
+                  child: Image.asset(
+                    "assets/navicon/mic.png",
+                    width: 25.w,
+                    height: 25.h,
+                  )),
+              Image.asset(
+                "assets/navicon/volume.png",
+                width: 25.w,
+                height: 25.h,
+              ),
+              InkWell(
+                  onTap: () {
+                    showPackage(context);
+                  },
+                  child: Image.asset(
+                    "assets/navicon/package.png",
+                    width: 25.w,
+                    height: 25.h,
+                  )),
+            ],
+          ),
+        ),
+        floatingActionButton: Container(
             height: 120.h,
             child: Column(
               children: [
@@ -591,7 +587,7 @@ class _JoinKitiChatRoomUser2State extends State<JoinKitiChatRoomUser2> {
                   height: 5.h,
                 ),
                 InkWell(
-                  onTap: (){
+                  onTap: () {
                     _interactiveGame(context);
                   },
                   child: Image.asset(
@@ -1345,7 +1341,11 @@ void _searchRoomID(BuildContext context) {
                 ],
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).pop();
+                //  _pkOurF(context);
+                  _pkMode(context);
+                },
                 child: Container(
                   width: 390.w,
                   height: 40.h,
@@ -1364,16 +1364,15 @@ void _searchRoomID(BuildContext context) {
   );
 }
 
+
 void _interactiveGame(BuildContext context) {
   showModalBottomSheet(
     context: context,
     builder: (context) {
       return Container(
-
           width: 390.w,
           padding: EdgeInsets.all(16),
           child: Column(
-
             children: [
               Column(
                 children: [
@@ -1389,16 +1388,16 @@ void _interactiveGame(BuildContext context) {
                       textAlign: TextAlign.left,
                     ),
                   ),
-
                   SizedBox(
                     height: 7.h,
                   ),
                   CustomText(
                     title:
-                    "Room owonerscan receive extra rewards if games with      are unlocked.",
+                        "Room owonerscan receive extra rewards if games with      are unlocked.",
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
-                  ), SizedBox(
+                  ),
+                  SizedBox(
                     height: 10.h,
                   ),
                   Row(
@@ -1415,7 +1414,6 @@ void _interactiveGame(BuildContext context) {
                               height: 65.h,
                               fit: BoxFit.contain,
                             ),
-
                             CustomText(
                               title: "Lodu",
                               fontSize: 14.sp,
@@ -1435,7 +1433,6 @@ void _interactiveGame(BuildContext context) {
                               height: 65.h,
                               fit: BoxFit.contain,
                             ),
-
                             CustomText(
                               title: "Fishing",
                               fontSize: 14.sp,
@@ -1455,7 +1452,6 @@ void _interactiveGame(BuildContext context) {
                               height: 65.h,
                               fit: BoxFit.contain,
                             ),
-
                             CustomText(
                               title: "Domino",
                               fontSize: 14.sp,
@@ -1466,7 +1462,6 @@ void _interactiveGame(BuildContext context) {
                       ),
                       Container(
                         width: 85.w,
-
                         child: Column(
                           children: [
                             Image.asset(
@@ -1475,7 +1470,6 @@ void _interactiveGame(BuildContext context) {
                               height: 65.h,
                               fit: BoxFit.contain,
                             ),
-
                             CustomText(
                               title: "Super winner",
                               fontSize: 14.sp,
@@ -1488,8 +1482,9 @@ void _interactiveGame(BuildContext context) {
                   ),
                 ],
               ),
-
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               Align(
                 alignment: Alignment.centerLeft,
                 child: CustomText(
@@ -1499,20 +1494,19 @@ void _interactiveGame(BuildContext context) {
                   textAlign: TextAlign.left,
                 ),
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Container(
-
                   width: 100.w,
                   height: 75.h,
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [
-                      Color(0xffB26AFE),
-                      Color(0xff9D6FFD),
-
-                    ])
-                  ),
+                      gradient: LinearGradient(colors: [
+                    Color(0xffB26AFE),
+                    Color(0xff9D6FFD),
+                  ])),
                   child: Image.asset(
                     "assets/chatroom/tas.png",
                     width: 65.w,
@@ -1521,7 +1515,9 @@ void _interactiveGame(BuildContext context) {
                   ),
                 ),
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -1536,7 +1532,6 @@ void _interactiveGame(BuildContext context) {
                           height: 65.h,
                           fit: BoxFit.contain,
                         ),
-
                         CustomText(
                           title: "Lucky Bags",
                           fontSize: 14.sp,
@@ -1547,22 +1542,21 @@ void _interactiveGame(BuildContext context) {
                   ),
                   Container(
                     width: 71.w,
-
                     child: Column(
                       children: [
                         Container(
-                          width: 56.w,
-                          height: 56.h,
-                          decoration: BoxDecoration(
-                              gradient: LinearGradient(colors: [
-                                Color(0xff879EC0),
-                                Color(0xff677697)
-                              ]),
-                              shape: BoxShape.circle
-                          ),
-                          child: Icon(Icons.settings, color: Colors.white,)
-                        ),
-
+                            width: 56.w,
+                            height: 56.h,
+                            decoration: BoxDecoration(
+                                gradient: LinearGradient(colors: [
+                                  Color(0xff879EC0),
+                                  Color(0xff677697)
+                                ]),
+                                shape: BoxShape.circle),
+                            child: Icon(
+                              Icons.settings,
+                              color: Colors.white,
+                            )),
                         CustomText(
                           title: "Effect and Sound",
                           fontSize: 14.sp,
@@ -1583,20 +1577,16 @@ void _interactiveGame(BuildContext context) {
                               gradient: LinearGradient(colors: [
                                 Color(0xffB26AFE),
                                 Color(0xff9D6FFD),
-
                               ]),
-                              shape: BoxShape.circle
-                          ),
+                              shape: BoxShape.circle),
                           child: Image.asset(
                             "assets/chatroom/share.png",
                             width: 15.w,
                             height: 15.h,
                             fit: BoxFit.fitHeight,
                             color: Colors.white,
-
                           ),
                         ),
-
                         CustomText(
                           title: "Share",
                           fontSize: 14.sp,
@@ -1607,19 +1597,17 @@ void _interactiveGame(BuildContext context) {
                   ),
                   Container(
                     width: 85.w,
-
                     child: Column(
                       children: [
                         Container(
                           width: 56.w,
                           height: 56.h,
                           decoration: BoxDecoration(
-                            gradient: LinearGradient(colors: [
-                              Color(0xff20D0E0),
-                              Color(0xff5FF37A)
-                            ]),
-                            shape: BoxShape.circle
-                          ),
+                              gradient: LinearGradient(colors: [
+                                Color(0xff20D0E0),
+                                Color(0xff5FF37A)
+                              ]),
+                              shape: BoxShape.circle),
                           child: Image.asset(
                             "assets/chatroom/dailytask.png",
                             width: 65.w,
@@ -1627,8 +1615,6 @@ void _interactiveGame(BuildContext context) {
                             fit: BoxFit.contain,
                           ),
                         ),
-
-
                         CustomText(
                           title: "Daily Task",
                           fontSize: 14.sp,
