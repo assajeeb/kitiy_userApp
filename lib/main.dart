@@ -7,6 +7,7 @@ import 'package:kitti/screens/groupUserScreenParts/group_screen.dart';
 import 'package:kitti/screens/join_group_group_space.dart';
 import 'package:kitti/screens/group_space_screen.dart';
 import 'package:kitti/screens/group_speak_management.dart';
+import 'package:kitti/screens/join_group_space/join_group_space_tp_14.dart';
 import 'package:kitti/screens/join_kiti_chat_room_user2.dart';
 import 'package:kitti/screens/roomManagement/create_room_page.dart';
 import 'package:kitti/screens/search_group_page.dart';
@@ -48,9 +49,9 @@ class MyApp extends StatelessWidget {
         );
       },
 
-     child:JoinKitiChatRoomUser2(),
+    child:JoinKitiChatRoomUser2(),
 
-     // child: CreateRoomPage(),
+  // child: CreateRoomPage(),
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kitti/util/colors.dart';
+import 'package:kitti/widgets/custom_text.dart';
 
 final Map<String, String> data = {
   "diamond": "assets/mng_room/diamond.png",
@@ -36,9 +37,14 @@ final List<Map<String, String>> members  = [
   },
 ];
 
-class CreateRoomPage extends StatelessWidget {
-  const CreateRoomPage({super.key});
+class CreateRoomPage extends StatefulWidget {
+   CreateRoomPage({super.key});
 
+  @override
+  State<CreateRoomPage> createState() => _CreateRoomPageState();
+}
+
+class _CreateRoomPageState extends State<CreateRoomPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -317,16 +323,17 @@ class CreateRoomPage extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                              SizedBox(
-                                height: 20.0,
-                                width: 130.0,
+                              Container(
+                                height: 25.h,
+                                width: 150.w,
+                                margin: EdgeInsets.only(bottom: 5.h),
                                 child: Row(
-                                  spacing: 4.0,
+                                  spacing: 4.w,
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: members.map((item) {
                                     return SizedBox(
-                                      height: 20.0,
-                                      width: 20.0,
+                                      height: 25.h,
+                                      width: 25.w,
                                       child: ClipRRect(
 
                                         borderRadius: BorderRadius.circular(30.0),
@@ -357,6 +364,7 @@ class CreateRoomPage extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: Row(
                       spacing: 10.0,
+
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: members.map((item) {
                         return SizedBox(
@@ -392,52 +400,160 @@ class CreateRoomPage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10.0,),
-                  Container(
-                    padding: EdgeInsets.all(10.0),
-                    child: SizedBox(
-                      height: 80.h,
-                      width: 80.h,
-                      child: Stack(
-                        children: [
-                          ClipRRect(
-                            clipBehavior: Clip.hardEdge,
-                            borderRadius: BorderRadius.circular(8.0),
-                            child: Image.asset(
-                              "assets/mng_room/group_photo.png",
-                              height: 70.h,
-                              width: 70.h,
-                              fit: BoxFit.cover,
-                            ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children:
+              [
+                Container(
+                  padding: EdgeInsets.all(10.0),
+                  child: SizedBox(
+                    height: 80.h,
+                    width: 80.h,
+                    child: Stack(
+                      children: [
+                        ClipRRect(
+                          clipBehavior: Clip.hardEdge,
+                          borderRadius: BorderRadius.circular(8.0),
+                          child: Image.asset(
+                            "assets/mng_room/group_photo.png",
+                            height: 70.h,
+                            width: 70.h,
+                            fit: BoxFit.cover,
                           ),
-                          Positioned(
-                            right: 0.0,
-                            bottom: 0.0,
-                            child: GestureDetector(
-                              onTap: (){},
-                              child: Container(
-                                height: 25.0,
-                                width: 25.0,
-                                padding: EdgeInsets.all(3.0),
-                                decoration: BoxDecoration(
+                        ),
+                        Positioned(
+                          right: 0.0,
+                          bottom: 0.0,
+                          child: GestureDetector(
+                            onTap: (){
+                              _selectImage(context);
+                            },
+                            child: Container(
+                              height: 25.0,
+                              width: 25.0,
+                              padding: EdgeInsets.all(3.0),
+                              decoration: BoxDecoration(
                                   border: Border.all(
-                                    width: 1, color: Colors.white
+                                      width: 1, color: Colors.white
                                   ),
                                   color: AppColors.goldColor,
                                   borderRadius: BorderRadius.circular(30.0)
-                                ),
-                                child: Icon(
-                                  CupertinoIcons.camera_fill,
-                                  size: 15.0,
-                                ),
+                              ),
+                              child: Icon(
+                                CupertinoIcons.camera_fill,
+                                size: 15.0,
                               ),
                             ),
-                          )
-                        ],
-                      ),
+                          ),
+                        )
+                      ],
                     ),
-                  )
+                  ),
+                ),
+                Container(
+                    height: 80.h,
+               alignment: Alignment.topRight,
+                  child: Image.asset("assets/chatroom/cross.png", height: 30.h,
+                  width: 30.h, color: Color(0xffAAABB0),))
+              ],),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+
+                          height: 46.h,
+                         width: 360.w,
+                     alignment: Alignment.centerLeft,
+
+                          decoration: BoxDecoration(
+                              color: Color(0xffECECEE)
+                          ),
+                          child: TextFormField(
+
+                            decoration: InputDecoration(
+
+                              hintText: " আজাইরা গপ্পো",
+                              border: InputBorder.none,
+
+                            ),
+                          ),
+
+                        ),
+                      Container(
+                        width: 30.h,
+                        height: 46.h,
+                        padding: EdgeInsets.only(right: 10.w),
+
+                        decoration: BoxDecoration(
+                            color: Color(0xffECECEE)
+                        ),
+                        child: Image.asset("assets/chatroom/edit.png",
+                          color: Colors.black,
+                          height: 46.h,
+                        ),
+                      )
+                    ],
+                  ),
+
+                  SizedBox(height: 10.h),
+                  Padding(
+                    padding:  EdgeInsets.only(left:10.w),
+                    child: CustomText(title: 'Room Tag',
+                    fontSize: 16.sp, fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                   SizedBox(height: 10.h),
+                  Expanded(
+                    child: GridView.builder(
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 3, // Number of columns
+                        crossAxisSpacing: 12,
+                        mainAxisSpacing: 12,
+                        childAspectRatio: 2.5, // Adjust this for button size
+                      ),
+                      itemCount: tags.length,
+                      itemBuilder: (context, index) {
+                        final tag = tags[index];
+                        final isSelected = selectedTag == tag;
+
+                        return SizedBox(
+                          width: 100.w,
+                          height: 27.h,
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor:
+                              isSelected ? Colors.amber : Colors.white,
+                              side: BorderSide(
+                                color: isSelected ? Colors.amber : Colors.teal,
+                                width: 1.5,
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              foregroundColor:
+                              isSelected ? Colors.white : Colors.teal,
+                              padding: const EdgeInsets.symmetric(vertical: 8),
+                            ),
+                            onPressed: () {
+                              setState(() {
+                                selectedTag = tag; // Update the selected tag
+                              });
+                            },
+                            child: CustomText(
+                              title: tag,
+                              fontSize: 15.sp,
+                              fontWeight: FontWeight.w400,
+
+                            )
+                          ),
+                        );
+                      },
+                    ),
+                  ),
                 ],
               ),
+
             ),
           ],
         ),
@@ -445,4 +561,82 @@ class CreateRoomPage extends StatelessWidget {
 
     );
   }
+
+   String selectedTag = 'Any';
+
+  final List<String> tags = [
+    'Any',
+    'Chat',
+    'Party',
+    'Sing',
+    'Radio',
+    'Poetry',
+    'Game',
+    'Soccer',
+    'Birthday',
+    'Emotion',
+    'DJ'
+  ];
+}
+
+
+void _selectImage(BuildContext context) {
+  showModalBottomSheet(
+    context: context,
+    builder: (context) {
+      return Container(
+        height: 200,
+        padding: EdgeInsets.all(16),
+        child: Column(
+          children: [
+            SizedBox(height: 15.h,),
+
+            Container(
+              height: 35.h, 
+              width: 390.w,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30.r)
+              ),
+              child: CustomText(title: "Select Image",
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w400,
+                textAlign: TextAlign.center,
+              
+              ),
+            ),
+
+
+            Container(
+              height: 35.h,
+              width: 390.w,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30.r)
+              ),
+              child: CustomText(title: "Take Image",
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w400,
+                textAlign: TextAlign.center,
+
+              ),
+            ),
+
+
+            Container(
+              height: 35.h,
+              width: 390.w,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30.r)
+              ),
+              child: CustomText(title: "Cancel",
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w400,
+                textAlign: TextAlign.center,
+
+              ),
+            )
+          ],
+        )
+      );
+    },
+  );
 }

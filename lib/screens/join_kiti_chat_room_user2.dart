@@ -8,6 +8,7 @@ import 'package:kitti/widgets/circular_image.dart';
 import 'package:kitti/widgets/custom_button_one.dart';
 
 import '../widgets/custom_text.dart';
+import 'chat_screen/chat_room_gift_dialog.dart';
 import 'chat_screen/pk_our_f.dart';
 import 'join_group_tootls.dart';
 
@@ -153,37 +154,42 @@ class _JoinKitiChatRoomUser2State extends State<JoinKitiChatRoomUser2> {
                                 ),
                               ),
                             ),
-                            Container(
-                              width: 68.w,
-                              height: 20.h,
-                              decoration: BoxDecoration(
-                                  color: Color(0xff3D4456),
-                                  borderRadius: BorderRadius.circular(16.r)),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Container(
-                                    width: 15.w,
-                                    height: 15.h,
-                                    child: Image.asset(
-                                      "assets/icons/user_icon.png",
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 5.w,
-                                  ),
-                                  Container(
-                                    child: Text(
-                                      "25",
-                                      style: TextStyle(
-                                        fontSize: 12.sp,
-                                        fontWeight: FontWeight.w400,
+                            InkWell(
+                              onTap: () {
+                                _showOnlinePeople(context);
+                              },
+                              child: Container(
+                                width: 68.w,
+                                height: 20.h,
+                                decoration: BoxDecoration(
+                                    color: Color(0xff3D4456),
+                                    borderRadius: BorderRadius.circular(16.r)),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      width: 15.w,
+                                      height: 15.h,
+                                      child: Image.asset(
+                                        "assets/icons/user_icon.png",
                                         color: Colors.white,
                                       ),
                                     ),
-                                  ),
-                                ],
+                                    SizedBox(
+                                      width: 5.w,
+                                    ),
+                                    Container(
+                                      child: Text(
+                                        "25",
+                                        style: TextStyle(
+                                          fontSize: 12.sp,
+                                          fontWeight: FontWeight.w400,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                             InkWell(
@@ -488,72 +494,90 @@ class _JoinKitiChatRoomUser2State extends State<JoinKitiChatRoomUser2> {
               SizedBox(
                 height: 10.h,
               ),
-              Container(
-                margin: EdgeInsets.only(left: 15.w),
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "Waiting List",
-                  style: TextStyle(
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.black),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Container(
-                height: 200.h,
-                alignment: Alignment.centerLeft,
-                child: ListView.builder(
-                    itemCount: wishList.length,
-                    itemBuilder: (context, index) {
-                      return ClipRRect(
-                        child: ListTile(
-                          leading: Image.asset(
-                            "${wishList[index]['img']}",
-                            height: 30.h,
-                            width: 30.w,
-                          ),
-                          title: Text(
-                            "${wishList[index]['name']}",
-                          ),
-                        ),
-                      );
-                    }),
-              ),
+              // Container(
+              //   margin: EdgeInsets.only(left: 15.w),
+              //   alignment: Alignment.centerLeft,
+              //   child: Text(
+              //     "Waiting List",
+              //     style: TextStyle(
+              //         fontSize: 18.sp,
+              //         fontWeight: FontWeight.w400,
+              //         color: Colors.black),
+              //     textAlign: TextAlign.center,
+              //   ),
+              // ),
+              // Container(
+              //   height: 200.h,
+              //   alignment: Alignment.centerLeft,
+              //   child: ListView.builder(
+              //       itemCount: wishList.length,
+              //       itemBuilder: (context, index) {
+              //         return ClipRRect(
+              //           child: ListTile(
+              //             leading: Image.asset(
+              //               "${wishList[index]['img']}",
+              //               height: 30.h,
+              //               width: 30.w,
+              //             ),
+              //             title: Text(
+              //               "${wishList[index]['name']}",
+              //             ),
+              //           ),
+              //         );
+              //       }),
+              // ),
             ],
           ),
         ),
         bottomNavigationBar: Container(
           margin: EdgeInsets.only(left: 5.w, right: 5.w, bottom: 10.h),
+          color: Colors.black,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Image.asset("assets/icons/message.png"),
+              GestureDetector(
+                onTap: () {
+                  _showWaitingList(context);
+                },
+                child: Image.asset(
+                  "assets/icons/waitinglist.png",
+                  width: 25.w,
+                  height: 20.h,
+                  color: Colors.white,
+                ),
+              ),
               Image.asset("assets/icons/smile.png"),
               Image.asset(
                 "assets/navicon/messenger.png",
                 width: 25.w,
                 height: 25.h,
+                color: Colors.white,
               ),
-              Image.asset(
-                "assets/icons/record.png",
-                width: 25.w,
-                height: 25.h,
+              GestureDetector(
+                onTap: () {
+                  showCustomBottomSheet(context);
+                },
+                child: Image.asset(
+                  "assets/icons/record.png",
+                  width: 25.w,
+                  height: 25.h,
+                ),
               ),
               GestureDetector(
                   onTap: () {
-                  // PkMode.pkOurF(context);
-
+                    // PkMode.pkOurF(context);
                   },
                   child: Image.asset(
                     "assets/navicon/mic.png",
                     width: 25.w,
                     height: 25.h,
+                    color: Colors.white,
                   )),
               Image.asset(
                 "assets/navicon/volume.png",
                 width: 25.w,
                 height: 25.h,
+                color: Colors.white,
               ),
               InkWell(
                   onTap: () {
@@ -563,6 +587,7 @@ class _JoinKitiChatRoomUser2State extends State<JoinKitiChatRoomUser2> {
                     "assets/navicon/package.png",
                     width: 25.w,
                     height: 25.h,
+                    color: Colors.white,
                   )),
             ],
           ),
@@ -1343,7 +1368,7 @@ void _searchRoomID(BuildContext context) {
               InkWell(
                 onTap: () {
                   Navigator.of(context).pop();
-                //  _pkOurF(context);
+                  //  _pkOurF(context);
                   _pkMode(context);
                 },
                 child: Container(
@@ -1363,7 +1388,6 @@ void _searchRoomID(BuildContext context) {
     },
   );
 }
-
 
 void _interactiveGame(BuildContext context) {
   showModalBottomSheet(
@@ -1627,6 +1651,536 @@ void _interactiveGame(BuildContext context) {
               ),
             ],
           ));
+    },
+  );
+}
+
+void _showWaitingList(BuildContext context) {
+  List<Map<String, dynamic>> wishList = [
+    {
+      "name": "Kayan 😍",
+      "img": "assets/u12.png",
+      "icons": [
+        "assets/chatroom/f1.png",
+        "assets/chatroom/f2.png",
+        "assets/chatroom/f3.png",
+      ]
+    },
+  ];
+  showModalBottomSheet(
+    context: context,
+    builder: (context) {
+      return Container(
+          width: 390.w,
+          padding: EdgeInsets.all(8.w),
+          child: Column(
+            children: [
+              Container(
+                margin: EdgeInsets.only(left: 15.w),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Waiting List",
+                  style: TextStyle(
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              Expanded(
+                child: ListView.builder(
+                    itemCount: wishList.length,
+                    itemBuilder: (context, index) {
+                      return ClipRRect(
+                        child: ListTile(
+                          leading: Image.asset(
+                            "${wishList[index]['img']}",
+                            height: 30.h,
+                            width: 30.w,
+                          ),
+                          title: Text(
+                            "${wishList[index]['name']}",
+                          ),
+                          subtitle: Row(
+                            children: [
+                              Image.asset(
+                                "${wishList[index]['icons'][0]}",
+                                height: 17.h,
+                                width: 17.w,
+                              ),
+                              Image.asset(
+                                "${wishList[index]['icons'][1]}",
+                                height: 17.h,
+                                width: 17.w,
+                              ),
+                              Image.asset(
+                                "${wishList[index]['icons'][2]}",
+                                height: 17.h,
+                                width: 17.w,
+                              ),
+                            ],
+                          ),
+                          trailing: Container(
+                            width: 70.w,
+                            child: Row(
+                              children: [
+                                InkWell(
+                                    onTap: () {},
+                                    child: Icon(Icons.close, size: 18.h)),
+                                SizedBox(
+                                  width: 5.w,
+                                ),
+                                InkWell(
+                                    onTap: () {},
+                                    child: Icon(Icons.check, size: 18.h)),
+                              ],
+                            ),
+                          ),
+                        ),
+                      );
+                    }),
+              ),
+              CustomButtonOne(
+                width: 300.w,
+                onTab: () {},
+                title: "Mic Request",
+                fontSize: 15.sp,
+                fontWeight: FontWeight.w400,
+                color: AppColors.btnColor,
+              ),
+            ],
+          ));
+    },
+  );
+}
+
+void _showOnlinePeople(BuildContext context) {
+  List<Map<String, dynamic>> wishList = [
+    {
+      "name": "Kayan 😍",
+      "img": "assets/u12.png",
+      "icons": [
+        "assets/chatroom/f1.png",
+        "assets/chatroom/f2.png",
+        "assets/chatroom/f3.png",
+      ]
+    },
+  ];
+  showModalBottomSheet(
+    context: context,
+    builder: (context) {
+      return Container(
+          width: 390.w,
+          padding: EdgeInsets.all(8.w),
+          child: Column(
+            children: [
+              Container(
+                margin: EdgeInsets.only(top: 10.w),
+                alignment: Alignment.center,
+                child: CustomText(
+                  title: "25 People Online",
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.w500,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              Container(
+                height: 100.h,
+                child: ListView.builder(
+                    itemCount: wishList.length,
+                    itemBuilder: (context, index) {
+                      return Container(
+                        child: Column(
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(left: 20.w),
+                              alignment: Alignment.centerLeft,
+                              child: CustomText(
+                                title: "Homeowner",
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w400,
+                                textAlign: TextAlign.left,
+                              ),
+                            ),
+                            ListTile(
+                              onTap: () {
+                                _showOnlineUserDetails(context);
+                              },
+                              leading: Image.asset(
+                                "${wishList[index]['img']}",
+                                height: 30.h,
+                                width: 30.w,
+                              ),
+                              title: Text(
+                                "${wishList[index]['name']}",
+                              ),
+                              subtitle: Row(
+                                children: [
+                                  Image.asset(
+                                    "${wishList[index]['icons'][0]}",
+                                    height: 17.h,
+                                    width: 17.w,
+                                  ),
+                                  Image.asset(
+                                    "${wishList[index]['icons'][1]}",
+                                    height: 17.h,
+                                    width: 17.w,
+                                  ),
+                                  Image.asset(
+                                    "${wishList[index]['icons'][2]}",
+                                    height: 17.h,
+                                    width: 17.w,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    }),
+              ),
+              Container(
+                height: 100.h,
+                child: ListView.builder(
+                    itemCount: wishList.length,
+                    itemBuilder: (context, index) {
+                      return Container(
+                        child: Column(
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(left: 20.w),
+                              alignment: Alignment.centerLeft,
+                              child: CustomText(
+                                title: "Admin",
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w400,
+                                textAlign: TextAlign.left,
+                              ),
+                            ),
+                            ListTile(
+                              leading: Image.asset(
+                                "${wishList[index]['img']}",
+                                height: 30.h,
+                                width: 30.w,
+                              ),
+                              title: Text(
+                                "${wishList[index]['name']}",
+                              ),
+                              subtitle: Row(
+                                children: [
+                                  Image.asset(
+                                    "${wishList[index]['icons'][0]}",
+                                    height: 17.h,
+                                    width: 17.w,
+                                  ),
+                                  Image.asset(
+                                    "${wishList[index]['icons'][1]}",
+                                    height: 17.h,
+                                    width: 17.w,
+                                  ),
+                                  Image.asset(
+                                    "${wishList[index]['icons'][2]}",
+                                    height: 17.h,
+                                    width: 17.w,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    }),
+              ),
+              Container(
+                height: 100.h,
+                child: ListView.builder(
+                    itemCount: wishList.length,
+                    itemBuilder: (context, index) {
+                      return Container(
+                        child: Column(
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(left: 20.w),
+                              alignment: Alignment.centerLeft,
+                              child: CustomText(
+                                title: "Member",
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w400,
+                                textAlign: TextAlign.left,
+                              ),
+                            ),
+                            ListTile(
+                              leading: Image.asset(
+                                "${wishList[index]['img']}",
+                                height: 30.h,
+                                width: 30.w,
+                              ),
+                              title: Text(
+                                "${wishList[index]['name']}",
+                              ),
+                              subtitle: Row(
+                                children: [
+                                  Image.asset(
+                                    "${wishList[index]['icons'][0]}",
+                                    height: 17.h,
+                                    width: 17.w,
+                                  ),
+                                  Image.asset(
+                                    "${wishList[index]['icons'][1]}",
+                                    height: 17.h,
+                                    width: 17.w,
+                                  ),
+                                  Image.asset(
+                                    "${wishList[index]['icons'][2]}",
+                                    height: 17.h,
+                                    width: 17.w,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    }),
+              ),
+            ],
+          ));
+    },
+  );
+}
+
+void _showOnlineUserDetails(BuildContext context) {
+  showModalBottomSheet(
+    context: context,
+    builder: (context) {
+      return Container(
+        width: 390.w,
+        padding: EdgeInsets.all(8.w),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          "assets/chatroom/g.png",
+                          height: 40.h,
+                          width: 40.w,
+                        ),
+                        Container(
+                          height: 16.h,
+                          width: 41.w,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                              color: Color(0xff773C10),
+                              borderRadius: BorderRadius.circular(10.r)),
+                          child: CustomText(
+                            title: "802",
+                            textColor: Colors.white,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Container(
+                    child: Row(
+                      children: [
+                        Image.asset(
+                          "assets/chatroom/right_arrow.png",
+                          height: 25.h,
+                          width: 25.w,
+                        ),
+                        Image.asset(
+                          "assets/chatroom/right_arrow.png",
+                          height: 25.h,
+                          width: 25.w,
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 10.w),
+              alignment: Alignment.center,
+              child: CustomText(
+                title: "☆☬ur prince☬☆",
+                fontSize: 18.sp,
+                fontWeight: FontWeight.w500,
+                textAlign: TextAlign.center,
+              ),
+            ),
+            SizedBox(
+              height: 10.h,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "assets/chatroom/f1.png",
+                  height: 17.h,
+                  width: 17.w,
+                ),
+                Image.asset(
+                  "assets/chatroom/f2.png",
+                  height: 17.h,
+                  width: 17.w,
+                ),
+                Image.asset(
+                  "assets/chatroom/f3.png",
+                  height: 17.h,
+                  width: 17.w,
+                ),
+              ],
+            ),
+            SizedBox(height: 15.h,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 10.w),
+                  alignment: Alignment.center,
+                  child: CustomText(
+                    title: 'ID: 90790400',
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w500,
+                    textColor: Color(0xff71717D),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                SizedBox(width: 10.w,),
+                Icon(Icons.copy, size:15.h),
+                SizedBox(width: 15.w,),
+                Container(
+                  margin: EdgeInsets.only(top: 10.w),
+                  alignment: Alignment.center,
+                  child: CustomText(
+                    title: 'Bangladesh',
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w500,
+                    textColor: Color(0xff71717D),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 30.h,
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 10.w),
+              alignment: Alignment.center,
+              child: CustomText(
+                title: 'My CP',
+                fontSize: 18.sp,
+                fontWeight: FontWeight.w500,
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 10.w),
+                  alignment: Alignment.center,
+                  child: CustomText(
+                    title: 'Currently no CP.',
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w500,
+                    textColor: Color(0xff71717D),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 10.w),
+                  alignment: Alignment.center,
+                  child: CustomText(
+                    title: 'Go to be their first CP!',
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w500,
+                    textColor: Color(0xff8341FF),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 30.h,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          "assets/chatroom/add_friend.png",
+                          height: 40.h,
+                          width: 40.w,
+                        ),
+                        Container(
+                          child: CustomText(
+                            title: "Add Friend",
+                            textColor: Color(0xff71717D),
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Container(
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          "assets/chatroom/gift.png",
+                          height: 40.h,
+                          width: 40.w,
+                        ),
+                        Container(
+                          alignment: Alignment.center,
+                          child: CustomText(
+                            title: "Send Gifts",
+                            textColor: Color(0xff71717D),
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Container(
+                    child: Column(
+                      children: [
+                        Image.asset("assets/chatroom/add.png",
+                            height: 40.h,
+                            width: 40.w,
+                            color: Color(0xff02CD3E)),
+                        Container(
+                          alignment: Alignment.center,
+                          child: CustomText(
+                            title: "Follow",
+                            textColor: Color(0xff71717D),
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      );
     },
   );
 }
