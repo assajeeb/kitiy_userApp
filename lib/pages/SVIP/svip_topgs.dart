@@ -6,7 +6,9 @@ import 'blackdi_tab.dart';
 
 class SvipTopgs extends StatefulWidget {
 
-   SvipTopgs({super.key, });
+  final String name;
+
+   SvipTopgs({super.key, required this.name, });
 
   @override
   State<SvipTopgs> createState() => _SvipTopgsState();
@@ -56,7 +58,7 @@ class _SvipTopgsState extends State<SvipTopgs> with SingleTickerProviderStateMix
                         },
                         icon: Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white,size: 25.r,),
                       ),
-                      Text("top sender",style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.w400,color: Colors.white),),
+                      Text(widget.name,style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.w400,color: Colors.white),),
                     ],
                   ),
 

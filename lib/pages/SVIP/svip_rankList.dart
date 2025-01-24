@@ -69,7 +69,7 @@ class _SvipRankState extends State<SvipRank> {
           ),
           GestureDetector(
             onTap: (){
-              Get.to(()=>SvipTopgs());
+              Get.to(()=>SvipTopgs(name: "Top Gifters",));
             },
             child: Container(
               margin: EdgeInsets.symmetric(horizontal: 15.w,vertical: 10.h),
@@ -108,7 +108,7 @@ class _SvipRankState extends State<SvipRank> {
           ),
           GestureDetector(
             onTap: (){
-              Get.to(()=>SvipTopgs());
+              Get.to(()=>SvipTopgs(name: "Top Gifters Sender",));
             },
             child: Container(
               margin: EdgeInsets.symmetric(horizontal: 15.w,vertical: 10.h),
@@ -147,7 +147,7 @@ class _SvipRankState extends State<SvipRank> {
           ),
           GestureDetector(
             onTap: (){
-              Get.to(()=>SvipTopgs());
+              Get.to(()=>SvipTopgs(name: "Popular Rooms",));
             },
             child: Container(
               margin: EdgeInsets.symmetric(horizontal: 15.w,vertical: 10.h),
