@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:kitiy_userapp/pages/recharge_coin/yellowRD.dart';
 
 class EmailController extends GetxController {
   late TextEditingController textEditingController;
@@ -246,6 +247,7 @@ class _SetTranPassState extends State<SetTranPass> {
                           height: 48.h,
                           child: ElevatedButton(
                             onPressed: () {
+                              Get.to(()=>RedeemBens());
 
                             },
                             child: Text(

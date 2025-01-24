@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:kitiy_userapp/pages/recharge_coin/yellowRD.dart';
 
 import 'Set_tran_pass.dart';
+import 'gift_record.dart';
 
 
 class RechargeCoin extends StatefulWidget {
@@ -27,7 +28,7 @@ class _RechargeCoinState extends State<RechargeCoin> {
         actions: [
           IconButton(
               onPressed: (){
-               // Get.to(()=>TopUpHistory());
+                Get.to(()=>GiftRecord());
               },
               icon: Icon(Icons.access_time,color: Color(0xff202020),))
         ],
@@ -77,18 +78,13 @@ class _RechargeCoinState extends State<RechargeCoin> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          GestureDetector(
-                            onTap: (){
-                              Get.to(()=>Yellowrd());
-                            },
-                            child: Row(
-                              children: [
-                                Image.asset("images/icons/yellowD.png",width: 20.w,height: 20.w,),
-                                SizedBox(width: 5.w,),
-                                Text("0.50",style: TextStyle(color: Color(0xff0B5F84),fontSize: 15.sp,fontWeight: FontWeight.w400),),
-                                    
-                              ],
-                            ),
+                          Row(
+                            children: [
+                              Image.asset("images/icons/yellowD.png",width: 20.w,height: 20.w,),
+                              SizedBox(width: 5.w,),
+                              Text("0.50",style: TextStyle(color: Color(0xff0B5F84),fontSize: 15.sp,fontWeight: FontWeight.w400),),
+
+                            ],
                           ),
                           Text("|",style: TextStyle(fontSize: 25.sp,color: Colors.grey.withOpacity(0.2)),),
                           Row(

@@ -4,7 +4,12 @@ import 'package:get/get.dart';
 import 'package:kitiy_userapp/pages/room_profile/room_pro_details.dart';
 
 import '../Agency/agency.dart';
+import '../SVIP/svip.dart';
+import '../badge/my_badge.dart';
 import '../host_reqest/host_req.dart';
+import '../income_record/income_record.dart';
+import '../mall/mall.dart';
+import '../my_nobel/my_nobel.dart';
 import '../recharge_coin/recharge_coin.dart';
 import '../top_up/top_up.dart';
 
@@ -143,9 +148,16 @@ class _RoomProfileState extends State<RoomProfile> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-               buttonItems("store", "Store"),
-                buttonItems("nobel", "Noble"),
-                buttonItems("yellowD", "SVIP"),
+               buttonItems("store", "Store",(){
+
+               }),
+                buttonItems("nobel", "Noble",(){
+                  Get.to(()=>MyNobel());
+                }),
+                buttonItems("yellowD", "SVIP",(){
+                  Get.to(()=>Svip());
+
+                }),
               ],
             ),
             SizedBox(height: 10.h,),
@@ -153,13 +165,13 @@ class _RoomProfileState extends State<RoomProfile> {
               Get.to(()=>RechargeCoin());
             }),
             listItems("ir", "Income Record", (){
-             // Get.to(()=>RechargeCoin());
+             Get.to(()=>IncomeRecord());
             }),
             listItems("bdge", "Badge", (){
-            //  Get.to(()=>RechargeCoin());
+            Get.to(()=>MyBadge());
             }),
             listItems("mall", "Mall", (){
-           //   Get.to(()=>RechargeCoin());
+             Get.to(()=>Mall());
             }),
             listItems("friend", "Friendship", (){
              // Get.to(()=>RechargeCoin());
@@ -184,25 +196,28 @@ class _RoomProfileState extends State<RoomProfile> {
       ),
     );
   }
-  Widget buttonItems(String image, text){
-    return  Container(
-      height: 63.h,
-      width: 120.w,
-      decoration: BoxDecoration(
-          color: Color(0xff2DD0BB),
-          borderRadius: BorderRadius.circular(10.r),
-          border: Border.all(
-              color: Color(0xff2B2B2B),
-              width: 2
-          )
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset("images/icons/$image.png",width: 30.w,height: 30.w,),
-          SizedBox(width: 10.w,),
-          Text(text,style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.w400,color: Color(0xff2B2B2B)),)
-        ],
+  Widget buttonItems(String image, text, VoidCallback onTap){
+    return  GestureDetector(
+      onTap: onTap,
+      child: Container(
+        height: 63.h,
+        width: 120.w,
+        decoration: BoxDecoration(
+            color: Color(0xff2DD0BB),
+            borderRadius: BorderRadius.circular(10.r),
+            border: Border.all(
+                color: Color(0xff2B2B2B),
+                width: 2
+            )
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset("images/icons/$image.png",width: 30.w,height: 30.w,),
+            SizedBox(width: 10.w,),
+            Text(text,style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.w400,color: Color(0xff2B2B2B)),)
+          ],
+        ),
       ),
     );
   }

@@ -26,9 +26,14 @@ class FriendsController extends GetxController with GetTickerProviderStateMixin 
   }
 }
 
-class Friends extends StatelessWidget {
+class Friends extends StatefulWidget {
   const Friends({super.key});
 
+  @override
+  State<Friends> createState() => _FriendsState();
+}
+
+class _FriendsState extends State<Friends> {
   @override
   Widget build(BuildContext context) {
     final FriendsController controller = Get.put(FriendsController());

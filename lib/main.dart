@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       designSize: const Size(420, 894),
       builder:(context, child)=>  GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
+        title: 'Kitty',
         theme: ThemeData.light(),
         home: RoomProfile(),// Friends()
       ),
